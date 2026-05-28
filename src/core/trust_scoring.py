@@ -3,10 +3,10 @@ Trust scoring service for the Enterprise LLM Trust Framework.
 """
 
 import logging
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 from datetime import datetime
 
-from core.interfaces import TrustScoringService, EvaluationResult, TrustScore
+from src.core.interfaces import TrustScoringService, EvaluationResult, TrustScore
 from config.settings import settings
 from config.logging import get_logger
 

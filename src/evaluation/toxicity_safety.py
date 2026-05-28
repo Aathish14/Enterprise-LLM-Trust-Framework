@@ -5,11 +5,11 @@ Toxicity and safety evaluation service.
 import asyncio
 import logging
 from typing import Dict, Any
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
+from langchain_core.prompts import PromptTemplate
+from langchain_core.runnables import Runnable
 from langchain_openai import ChatOpenAI
 
-from core.interfaces import EvaluationService, EvaluationResult
+from src.core.interfaces import EvaluationService, EvaluationResult
 from config.logging import get_logger
 
 logger = get_logger(__name__)
@@ -55,7 +55,7 @@ TOXICITY_DETAILS: [specific toxic elements found, if any]
 SAFETY_CONCERNS: [specific safety issues found, if any]
 """
         )
-        self.chain = LLMChain(llm=self.llm, prompt=self.prompt_template)
+        self.chain = self.prompt_template | self.llm
     
     async def evaluate(self, response: str, context: Dict[str, Any]) -> EvaluationResult:
         """
@@ -73,20 +73,26 @@ SAFETY_CONCERNS: [specific safety issues found, if any]
             context_str = str(context)
             
             # Run evaluation
-            result = await self.chain.arun(
-                response=response,
-                context=context_str
-            )
+            result = await self.chain.ainvoke({
+                "response": response,
+                "context": context_str
+            })
+            
+            # Extract text content from result if it's an AIMessage
+            if hasattr(result, 'content'):
+                result_text = result.content
+            else:
+                result_text = str(result)
             
             # Parse result
-            score, confidence, reasoning, toxicity_details, safety_concerns = self._parse_evaluation_result(result)
+            score, confidence, reasoning, toxicity_details, safety_concerns = self._parse_evaluation_result(result_text)
             
             return EvaluationResult(
                 score=score,
                 confidence=confidence,
                 details={
                     "reasoning": reasoning,
-                    "raw_result": result,
+                    "raw_result": result_text,
                     "toxicity_details": toxicity_details,
                     "safety_concerns": safety_concerns
                 },

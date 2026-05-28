@@ -5,11 +5,11 @@ Response quality evaluation service.
 import asyncio
 import logging
 from typing import Dict, Any
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
+from langchain_core.prompts import PromptTemplate
+from langchain_core.runnables import Runnable
 from langchain_openai import ChatOpenAI
 
-from core.interfaces import EvaluationService, EvaluationResult
+from src.core.interfaces import EvaluationService, EvaluationResult
 from config.logging import get_logger
 
 logger = get_logger(__name__)
@@ -54,7 +54,7 @@ RELEVANCE: [score for relevance between 0.0 and 1.0]
 CLARITY: [score for clarity and coherence between 0.0 and 1.0]
 """
         )
-        self.chain = LLMChain(llm=self.llm, prompt=self.prompt_template)
+        self.chain = self.prompt_template | self.llm
     
     async def evaluate(self, response: str, context: Dict[str, Any]) -> EvaluationResult:
         """
@@ -72,20 +72,26 @@ CLARITY: [score for clarity and coherence between 0.0 and 1.0]
             context_str = str(context)
             
             # Run evaluation
-            result = await self.chain.arun(
-                response=response,
-                context=context_str
-            )
+            result = await self.chain.ainvoke({
+                "response": response,
+                "context": context_str
+            })
+            
+            # Extract text content from result if it's an AIMessage
+            if hasattr(result, 'content'):
+                result_text = result.content
+            else:
+                result_text = str(result)
             
             # Parse result
-            score, confidence, grammar_fluency, completeness, relevance, clarity, reasoning = self._parse_evaluation_result(result)
+            score, confidence, grammar_fluency, completeness, relevance, clarity, reasoning = self._parse_evaluation_result(result_text)
             
             return EvaluationResult(
                 score=score,
                 confidence=confidence,
                 details={
                     "reasoning": reasoning,
-                    "raw_result": result,
+                    "raw_result": result_text,
                     "grammar_fluency": grammar_fluency,
                     "completeness": completeness,
                     "relevance": relevance,

@@ -1,0 +1,17 @@
+2026-05-27 18:37:47 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: Test error
+2026-05-27 18:38:20 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: Test error
+2026-05-27 18:46:36 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: object AIMessage can't be used in 'await' expression
+2026-05-27 18:46:36 - src.evaluation.hallucination_detection - ERROR - hallucination_detection:92 - Error in hallucination detection evaluation: object AIMessage can't be used in 'await' expression
+2026-05-27 18:46:37 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: object AIMessage can't be used in 'await' expression
+2026-05-27 18:46:37 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: object AIMessage can't be used in 'await' expression
+2026-05-27 20:06:33 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: Test error
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:53:43 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: Test error
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-28 09:57:48 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: Test error

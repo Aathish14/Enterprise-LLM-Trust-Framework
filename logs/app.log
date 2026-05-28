@@ -1,0 +1,1527 @@
+2026-05-27 18:11:41 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:11:41 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:11:41 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:11:43 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:11:44 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:14:37 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:14:37 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:14:37 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:18:29 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:18:29 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:19:48 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:19:48 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:20:13 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:20:13 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:20:13 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:20:13 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.5, 'hallucination_likelihood': 0.5}
+2026-05-27 18:20:13 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:20:13 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:20:13 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:20:13 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:20:13 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:20:13 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:20:13 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:20:14 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:20:14 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:20:14 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:20:14 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:20:14 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:20:14 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:20:14 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:20:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:21:19 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:21:19 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:21:19 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:21:19 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.5, 'hallucination_likelihood': 0.5}
+2026-05-27 18:21:19 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:21:19 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:21:19 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:21:19 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:21:19 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:21:19 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:21:19 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:21:20 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:21:20 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:21:20 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:21:20 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:21:20 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:21:20 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:21:20 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:21:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:21:43 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:21:43 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:21:43 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:21:43 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:21:43 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:21:43 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:21:43 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:21:43 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:21:43 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:21:43 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:21:43 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:21:43 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:21:43 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.01s
+2026-05-27 18:21:45 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 18:21:45 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 18:21:45 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:99 - Generating refined response based on critique
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:107 - Re-evaluating refined response
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 2/2
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.01s
+2026-05-27 18:21:45 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:21:45 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:23:52 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:23:52 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:23:52 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:23:52 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 18:23:52 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 18:23:52 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:99 - Generating refined response based on critique
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:107 - Re-evaluating refined response
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 2/2
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 18:23:52 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:23:52 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:24:10 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:24:10 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:24:11 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:24:11 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 18:24:11 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 18:24:11 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:99 - Generating refined response based on critique
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:107 - Re-evaluating refined response
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 2/2
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.01s
+2026-05-27 18:24:11 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:24:11 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:24:11 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:24:12 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:24:14 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:24:14 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:24:14 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.5, 'hallucination_likelihood': 0.5}
+2026-05-27 18:24:14 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:24:14 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:24:14 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:24:14 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:24:14 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:24:14 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:24:14 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:24:14 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:24:14 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:24:14 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:26:42 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:26:42 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:26:42 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:28:55 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:28:55 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:28:55 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:30:49 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:30:49 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:30:49 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:30:50 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:30:52 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:35:08 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:35:08 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:35:30 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:35:30 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:35:30 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:35:30 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:37:46 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:37:46 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:37:46 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:37:47 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:37:47 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:37:47 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: Test error
+2026-05-27 18:38:18 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:38:18 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:38:19 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:38:19 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 18:38:19 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 18:38:19 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:99 - Generating refined response based on critique
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:107 - Re-evaluating refined response
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 2/2
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.01s
+2026-05-27 18:38:19 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:19 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:38:19 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:20 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:20 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:20 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: Test error
+2026-05-27 18:38:20 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:38:20 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.5, 'hallucination_likelihood': 0.5}
+2026-05-27 18:38:20 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:38:20 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:38:20 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:38:20 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:38:20 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:38:20 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:38:20 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 18:38:20 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:20 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:38:20 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:38:51 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:38:51 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:38:51 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:38:54 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:43:24 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:43:24 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:43:25 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:43:28 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:46:34 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:46:34 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:46:35 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:46:36 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:46:36 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 2 evaluation services
+2026-05-27 18:46:36 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: What is the capital of France?...
+2026-05-27 18:46:36 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:46:36 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:46:36 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: object AIMessage can't be used in 'await' expression
+2026-05-27 18:46:36 - src.evaluation.hallucination_detection - ERROR - hallucination_detection:92 - Error in hallucination detection evaluation: object AIMessage can't be used in 'await' expression
+2026-05-27 18:46:36 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:46:36 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:46:36 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:46:36 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 18:46:36 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:46:36 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:46:36 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:46:36 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:46:36 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:46:36 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.01s
+2026-05-27 18:46:37 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:46:37 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:46:37 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Describe the water cycle in detail....
+2026-05-27 18:46:37 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:46:37 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:46:37 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: object AIMessage can't be used in 'await' expression
+2026-05-27 18:46:37 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:46:37 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:46:37 - src.core.pipeline - INFO - pipeline:99 - Generating refined response based on critique
+2026-05-27 18:46:37 - src.core.pipeline - INFO - pipeline:107 - Re-evaluating refined response
+2026-05-27 18:46:37 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: object AIMessage can't be used in 'await' expression
+2026-05-27 18:46:37 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 2/2
+2026-05-27 18:46:37 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:46:37 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.01s
+2026-05-27 18:52:31 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 18:52:31 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 18:52:32 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:52:33 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 2 evaluation services
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: What is the capital of France?...
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:52:33 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 18:52:33 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 18:52:33 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 18:52:33 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 18:52:33 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 18:52:33 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.01s
+2026-05-27 18:52:33 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Describe the water cycle in detail....
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:99 - Generating refined response based on critique
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:107 - Re-evaluating refined response
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 2/2
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 18:52:33 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 19:35:53 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 19:35:53 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 19:35:57 - observation.mlflow_integration - INFO - mlflow_integration:45 - Created MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 19:35:57 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-27 19:35:57 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 19:35:57 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:57 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:57 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:57 - observation.experiment_tracking - INFO - experiment_tracking:108 - Created experiment: test_experiment (ID: 181c3899-d8e1-4e9b-afc6-ff49921eae49)
+2026-05-27 19:35:59 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run f2a57311-199a-4ab6-82af-3a93e22834a7 in experiment exp_123
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 10ec8352-c551-4264-83e8-77cc378a5af7 in experiment exp_123
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run 10ec8352-c551-4264-83e8-77cc378a5af7 with status: FINISHED
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run a9bb5be6-9ba2-455d-acda-6f54acf080e6 in experiment exp_123
+2026-05-27 19:35:59 - observation.experiment_tracking - DEBUG - experiment_tracking:212 - Logged 2 parameters to run a9bb5be6-9ba2-455d-acda-6f54acf080e6
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run d8964502-8998-424c-a711-225b75ec173d in experiment exp_123
+2026-05-27 19:35:59 - observation.experiment_tracking - DEBUG - experiment_tracking:233 - Logged 2 metrics to run d8964502-8998-424c-a711-225b75ec173d
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 36d2f2bb-bc7d-4c6a-9580-e9903ae453e0 in experiment exp_123
+2026-05-27 19:35:59 - observation.experiment_tracking - DEBUG - experiment_tracking:257 - Logged artifact /path/to/model.pkl to run 36d2f2bb-bc7d-4c6a-9580-e9903ae453e0
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run f3fb06e1-c323-4cf1-bd61-09924b86894b in experiment exp_123
+2026-05-27 19:35:59 - observation.experiment_tracking - DEBUG - experiment_tracking:278 - Set tag environment=production on run f3fb06e1-c323-4cf1-bd61-09924b86894b
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run ccd097e5-729e-4acd-93ea-541b3c0fc5ab in experiment exp_123
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 6c3e7afd-1195-45ae-90c0-20dfe235a13f in experiment exp_123
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run cd6616a0-2a33-411f-9357-8e7f63d32f49 in experiment exp_123
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run 6c3e7afd-1195-45ae-90c0-20dfe235a13f with status: FINISHED
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 391a061f-099a-4900-9fb8-13d2469e1381 in experiment exp_123
+2026-05-27 19:35:59 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run 391a061f-099a-4900-9fb8-13d2469e1381 with status: FINISHED
+2026-05-27 19:41:56 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 19:41:56 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 19:41:57 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-27 19:41:57 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 19:41:57 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 19:41:57 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:108 - Created experiment: test_experiment (ID: a735150e-a6fa-4aa6-87d3-c8e77f968a8a)
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 791ea059-ec5f-4bb8-86f7-009e392f21b9 in experiment exp_123
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run dc4cf42f-dc61-4339-80e6-764090b6976f in experiment exp_123
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run dc4cf42f-dc61-4339-80e6-764090b6976f with status: FINISHED
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run a41986b4-bd9b-4f4a-92a6-828eb17295f9 in experiment exp_123
+2026-05-27 19:41:58 - observation.experiment_tracking - DEBUG - experiment_tracking:212 - Logged 2 parameters to run a41986b4-bd9b-4f4a-92a6-828eb17295f9
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 487fb3f9-062b-43e6-b425-da10170c04c5 in experiment exp_123
+2026-05-27 19:41:58 - observation.experiment_tracking - DEBUG - experiment_tracking:233 - Logged 2 metrics to run 487fb3f9-062b-43e6-b425-da10170c04c5
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run d572b2db-565e-457a-90e9-9ed3ab93b487 in experiment exp_123
+2026-05-27 19:41:58 - observation.experiment_tracking - DEBUG - experiment_tracking:257 - Logged artifact /path/to/model.pkl to run d572b2db-565e-457a-90e9-9ed3ab93b487
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run c59c1212-fd5b-4616-bb62-75e6b7781522 in experiment exp_123
+2026-05-27 19:41:58 - observation.experiment_tracking - DEBUG - experiment_tracking:278 - Set tag environment=production on run c59c1212-fd5b-4616-bb62-75e6b7781522
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 768d7ff6-9ba4-4394-8fd2-cdc0fc78b91d in experiment exp_123
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 849524be-bf76-4d2d-8d71-d038dcad48ed in experiment exp_123
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 613937af-c011-469d-822f-727ccbac1c47 in experiment exp_123
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run 849524be-bf76-4d2d-8d71-d038dcad48ed with status: FINISHED
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 2243c0a3-1fdc-4fdd-9e84-348578e940ea in experiment exp_123
+2026-05-27 19:41:58 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run 2243c0a3-1fdc-4fdd-9e84-348578e940ea with status: FINISHED
+2026-05-27 19:50:52 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 19:50:52 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 19:50:52 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 5
+2026-05-27 19:53:09 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 19:53:09 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 19:53:09 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 5
+2026-05-27 19:53:09 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:53:09 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:53:09 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:53:10 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:53:10 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:53:10 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:53:10 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:55:38 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 19:55:38 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 19:55:38 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 5
+2026-05-27 19:55:38 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:55:38 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:55:38 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:55:38 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:55:38 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:55:38 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:55:38 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 19:58:22 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 19:58:22 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 19:58:22 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 19:58:22 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: llm_call
+2026-05-27 19:58:22 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: evaluation
+2026-05-27 19:58:22 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: evaluation_pipeline
+2026-05-27 19:58:22 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 19:58:22 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 19:58:22 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-27 19:58:22 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-27 19:58:22 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-27 19:58:22 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-27 19:58:22 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.150s
+2026-05-27 19:58:22 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.150s (success=False)
+2026-05-27 19:58:22 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 19:58:22 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.021s
+2026-05-27 19:58:22 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.021s (success=True)
+2026-05-27 19:58:23 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 19:58:23 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 19:58:23 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.023s
+2026-05-27 19:58:23 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.023s (success=True)
+2026-05-27 19:58:23 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 19:58:23 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.012s
+2026-05-27 19:58:23 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.012s (success=False)
+2026-05-27 19:58:23 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 19:58:23 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-27 19:58:23 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-27 19:58:23 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-27 19:58:23 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-27 19:58:23 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.150s
+2026-05-27 19:58:23 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.150s (success=True)
+2026-05-27 19:58:23 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.300s
+2026-05-27 19:58:23 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.300s (success=True)
+2026-05-27 19:58:23 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.050s
+2026-05-27 19:58:23 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.050s (success=True)
+2026-05-27 19:58:24 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 19:58:24 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-27 19:58:24 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-27 19:58:24 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-27 19:58:24 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-27 19:58:24 - observation.latency_monitor - INFO - latency_monitor:125 - Latency history reset for test_operation
+2026-05-27 20:00:31 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:00:31 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:00:31 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:00:31 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: llm_call
+2026-05-27 20:00:31 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: evaluation
+2026-05-27 20:00:31 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: evaluation_pipeline
+2026-05-27 20:00:31 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:00:31 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.150s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.150s (success=False)
+2026-05-27 20:00:31 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.012s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.012s (success=True)
+2026-05-27 20:00:31 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:00:31 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.024s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.024s (success=True)
+2026-05-27 20:00:31 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.009s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.009s (success=False)
+2026-05-27 20:00:31 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.150s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.150s (success=True)
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.300s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.300s (success=True)
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.050s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.050s (success=True)
+2026-05-27 20:00:31 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-27 20:00:31 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-27 20:00:31 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-27 20:00:31 - observation.latency_monitor - INFO - latency_monitor:125 - Latency history reset for test_operation
+2026-05-27 20:04:00 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:04:00 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:04:00 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:00 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:00 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:08 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 20:04:08 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 20:04:08 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:04:08 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-27 20:04:08 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:08 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:08 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:08 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-27 20:04:08 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:08 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:08 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-27 20:04:08 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:08 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:09 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:09 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-27 20:04:09 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:09 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-27 20:04:09 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:09 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:04:09 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:06:32 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:06:32 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:06:32 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:06:33 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:06:33 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:06:33 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: Test error
+2026-05-27 20:09:45 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:09:45 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:09:49 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-27 20:09:49 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 20:09:49 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 20:09:49 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:09:49 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:09:50 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:09:52 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.01405024528503418, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 2, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.004489302635192871, 'total_processing_time_seconds': 0.008978605270385742, 'avg_test_metric': 0.8}}}
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.01s
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:09:52 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:09:52 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.016997337341308594, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 1, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.005006313323974609, 'total_processing_time_seconds': 0.005006313323974609, 'avg_test_metric': 0.8}}}
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.02s
+2026-05-27 20:09:52 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:12:18 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:12:18 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:12:22 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-27 20:12:22 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 20:12:22 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 20:12:22 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:12:22 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:12:22 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-27 20:12:24 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:12:24 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:12:24 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:12:24 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:12:24 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:12:24 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:12:24 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:12:24 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:12:24 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:12:24 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:12:24 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:12:24 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.03s
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.0352938175201416, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 2, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.015151500701904297, 'total_processing_time_seconds': 0.030303001403808594, 'avg_test_metric': 0.8}}}
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.04s
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:12:25 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:12:25 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.01499485969543457, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 1, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.004951000213623047, 'total_processing_time_seconds': 0.004951000213623047, 'avg_test_metric': 0.8}}}
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.01s
+2026-05-27 20:12:25 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:16:04 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:16:04 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:16:08 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-27 20:16:08 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 20:16:08 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 20:16:08 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:16:08 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:16:09 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:16:11 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.03s
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.0345759391784668, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 2, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.01528632640838623, 'total_processing_time_seconds': 0.03057265281677246, 'avg_test_metric': 0.8}}}
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.03s
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:16:11 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:16:11 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.014170408248901367, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 1, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.003999471664428711, 'total_processing_time_seconds': 0.003999471664428711, 'avg_test_metric': 0.8}}}
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.01s
+2026-05-27 20:16:11 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:21:30 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:21:30 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:21:35 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-27 20:21:35 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 20:21:35 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 20:21:35 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:21:35 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:21:35 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.03s
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.0374295711517334, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 2, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.016217350959777832, 'total_processing_time_seconds': 0.032434701919555664, 'avg_test_metric': 0.8}}}
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.04s
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:21:35 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:21:35 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.013915300369262695, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 1, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.0039975643157958984, 'total_processing_time_seconds': 0.0039975643157958984, 'avg_test_metric': 0.8}}}
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.01s
+2026-05-27 20:21:35 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:21:36 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-27 20:22:52 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:22:52 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:22:57 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-27 20:22:57 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 20:22:57 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 20:22:57 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:22:57 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:22:57 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:22:57 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-27 20:26:46 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:26:46 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:26:51 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-27 20:26:51 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 20:26:51 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 20:26:51 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:26:51 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:26:51 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.03s
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.03567981719970703, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 2, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.01584041118621826, 'total_processing_time_seconds': 0.03168082237243652, 'avg_test_metric': 0.8}}}
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.04s
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:26:51 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:26:51 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.016016483306884766, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 1, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.00499725341796875, 'total_processing_time_seconds': 0.00499725341796875, 'avg_test_metric': 0.8}}}
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.02s
+2026-05-27 20:26:51 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:29:54 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:29:54 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:29:58 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-27 20:29:58 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 20:29:58 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 20:29:58 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:29:58 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:29:58 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:29:59 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.03s
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.03724360466003418, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 2, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.015396356582641602, 'total_processing_time_seconds': 0.030792713165283203, 'avg_test_metric': 0.8}}}
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.04s
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:29:59 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:29:59 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.011931180953979492, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 1, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.004002571105957031, 'total_processing_time_seconds': 0.004002571105957031, 'avg_test_metric': 0.8}}}
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.01s
+2026-05-27 20:29:59 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:30:00 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-27 20:32:03 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:32:03 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:32:04 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 20:32:04 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 20:32:04 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:35:18 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:35:18 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:35:20 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:35:20 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:35:20 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:35:20 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:35:21 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:35:21 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:35:21 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:35:21 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:36:45 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:36:45 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:37:17 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:37:17 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:37:17 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:37:17 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:37:19 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:37:19 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:37:20 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:37:20 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:37:20 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:37:20 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:39:38 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:39:38 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:39:39 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:39:39 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:39:39 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:39:39 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:39:41 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:39:41 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:39:41 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:39:41 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:42:10 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:42:10 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:42:10 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:42:10 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:42:10 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:42:10 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:42:11 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:42:11 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:42:13 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:42:13 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:45:40 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:45:40 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:45:40 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:45:40 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:45:41 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:45:41 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:45:41 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:45:41 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:45:43 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:45:43 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:48:03 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:48:03 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:48:03 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:48:03 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:48:03 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:48:03 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:48:04 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:48:04 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:48:07 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:48:07 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:49:38 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:49:38 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:49:40 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:49:40 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:49:41 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:49:41 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:49:42 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:49:42 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:49:43 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:49:43 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:49:45 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:49:45 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:49:46 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:49:46 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:49:47 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:49:47 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:49:48 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:49:48 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:53:31 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:53:31 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:53:37 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-27 20:53:37 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-27 20:53:37 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-27 20:53:38 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:38 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:38 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 5
+2026-05-27 20:53:38 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: llm_call
+2026-05-27 20:53:38 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: evaluation
+2026-05-27 20:53:38 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: evaluation_pipeline
+2026-05-27 20:53:39 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:53:39 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.018014192581176758, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 2, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.004489779472351074, 'total_processing_time_seconds': 0.008979558944702148, 'avg_test_metric': 0.8}}}
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.02s
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:53:39 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-27 20:53:39 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.032639503479003906, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 1, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.006001949310302734, 'total_processing_time_seconds': 0.006001949310302734, 'avg_test_metric': 0.8}}}
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.03s
+2026-05-27 20:53:39 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-27 20:53:41 - llm.base_adapter - INFO - base_adapter:28 - Initialized OpenAIAdapter for model: gpt-3.5-turbo
+2026-05-27 20:53:41 - llm.openai_adapter - INFO - openai_adapter:40 - Initialized OpenAI adapter for model: gpt-3.5-turbo
+2026-05-27 20:53:41 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:41 - llm.base_adapter - INFO - base_adapter:28 - Initialized OpenAIAdapter for model: gpt-3.5-turbo
+2026-05-27 20:53:41 - llm.openai_adapter - INFO - openai_adapter:40 - Initialized OpenAI adapter for model: gpt-3.5-turbo
+2026-05-27 20:53:41 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:41 - llm.openai_adapter - DEBUG - openai_adapter:75 - Generated response of length 13 from gpt-3.5-turbo
+2026-05-27 20:53:41 - llm.base_adapter - INFO - base_adapter:28 - Initialized OpenAIAdapter for model: gpt-3.5-turbo
+2026-05-27 20:53:41 - llm.openai_adapter - INFO - openai_adapter:40 - Initialized OpenAI adapter for model: gpt-3.5-turbo
+2026-05-27 20:53:41 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:108 - Created experiment: test_experiment (ID: c2d37387-93b0-46a9-b057-18c9af2ace98)
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 12cb455a-126c-4c31-aef5-043ac7763a2e in experiment exp_123
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 7d21b3c2-db00-4e64-bd2a-774ded83a908 in experiment exp_123
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run 7d21b3c2-db00-4e64-bd2a-774ded83a908 with status: FINISHED
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 1beb4caf-fdb6-4288-9ea5-a122f6788ee8 in experiment exp_123
+2026-05-27 20:53:41 - observation.experiment_tracking - DEBUG - experiment_tracking:212 - Logged 2 parameters to run 1beb4caf-fdb6-4288-9ea5-a122f6788ee8
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run eb72d8ed-1843-485d-b709-e11ab4db217c in experiment exp_123
+2026-05-27 20:53:41 - observation.experiment_tracking - DEBUG - experiment_tracking:233 - Logged 2 metrics to run eb72d8ed-1843-485d-b709-e11ab4db217c
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run cc45efed-72f4-4e50-badf-869a61e97cd1 in experiment exp_123
+2026-05-27 20:53:41 - observation.experiment_tracking - DEBUG - experiment_tracking:257 - Logged artifact /path/to/model.pkl to run cc45efed-72f4-4e50-badf-869a61e97cd1
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 5827ab5f-9c27-489c-8431-548cf53ae7f8 in experiment exp_123
+2026-05-27 20:53:41 - observation.experiment_tracking - DEBUG - experiment_tracking:278 - Set tag environment=production on run 5827ab5f-9c27-489c-8431-548cf53ae7f8
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run d8810cc2-3ceb-45f1-bb58-389ad3e2bcca in experiment exp_123
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 57a21fe5-9378-4f62-8628-06407515c380 in experiment exp_123
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 247e8cd9-f6a7-4f43-b665-0fd16139416e in experiment exp_123
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run 57a21fe5-9378-4f62-8628-06407515c380 with status: FINISHED
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run ad5a5816-ef3f-40b4-b866-b31e1ae7818e in experiment exp_123
+2026-05-27 20:53:41 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run ad5a5816-ef3f-40b4-b866-b31e1ae7818e with status: FINISHED
+2026-05-27 20:53:41 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 20:53:41 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 20:53:41 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 20:53:41 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 20:53:41 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 20:53:41 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 20:53:41 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-27 20:53:41 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:53:41 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.150s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.150s (success=False)
+2026-05-27 20:53:41 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.021s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.021s (success=True)
+2026-05-27 20:53:41 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:53:41 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.023s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.023s (success=True)
+2026-05-27 20:53:41 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.015s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.015s (success=False)
+2026-05-27 20:53:41 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.150s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.150s (success=True)
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.300s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.300s (success=True)
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.050s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.050s (success=True)
+2026-05-27 20:53:41 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-27 20:53:41 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-27 20:53:41 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-27 20:53:41 - observation.latency_monitor - INFO - latency_monitor:125 - Latency history reset for test_operation
+2026-05-27 20:53:41 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:41 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:41 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-27 20:53:41 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:41 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:42 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:42 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-27 20:53:42 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:42 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:42 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-27 20:53:42 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:42 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:42 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:42 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-27 20:53:42 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:42 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-27 20:53:42 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:42 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:42 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-27 20:53:42 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:53:42 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:53:42 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:53:42 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:99 - Generating refined response based on critique
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:107 - Re-evaluating refined response
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 2/2
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-27 20:53:42 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:42 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:53:42 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:43 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:43 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:43 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: Test error
+2026-05-27 20:53:43 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 20:53:43 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.5, 'hallucination_likelihood': 0.5}
+2026-05-27 20:53:43 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 20:53:43 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 20:53:43 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 20:53:43 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 20:53:43 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 20:53:43 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 20:53:43 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-27 20:53:43 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:53:43 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 20:53:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 20:54:04 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-27 20:54:04 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-27 20:54:04 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:54:05 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 2 evaluation services
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: What is the capital of France?...
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:54:05 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-27 20:54:05 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-27 20:54:05 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-27 20:54:05 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-27 20:54:05 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-27 20:54:05 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.01s
+2026-05-27 20:54:05 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Describe the water cycle in detail....
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:99 - Generating refined response based on critique
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:107 - Re-evaluating refined response
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 2/2
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-27 20:54:05 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-28 09:57:24 - config.logging - INFO - logging:100 - Logging initialized for Enterprise LLM Trust Framework v0.1.0
+2026-05-28 09:57:24 - config.logging - DEBUG - logging:101 - Debug mode: True
+2026-05-28 09:57:41 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-28 09:57:41 - observation.mlflow_integration - INFO - mlflow_integration:50 - Using existing MLflow experiment: llm_trust_framework (ID: 1)
+2026-05-28 09:57:41 - observation.mlflow_integration - INFO - mlflow_integration:58 - MLflow tracking initialized with URI: sqlite:///mlflow.db
+2026-05-28 09:57:41 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:41 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:41 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 5
+2026-05-28 09:57:41 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: llm_call
+2026-05-28 09:57:41 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: evaluation
+2026-05-28 09:57:41 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: evaluation_pipeline
+2026-05-28 09:57:41 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:42 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-28 09:57:43 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 2 evaluation services
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: What is the capital of France?...
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-28 09:57:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-28 09:57:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-28 09:57:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-28 09:57:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-28 09:57:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-28 09:57:43 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.01s
+2026-05-28 09:57:43 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Describe the water cycle in detail....
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:99 - Generating refined response based on critique
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:107 - Re-evaluating refined response
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 2/2
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-28 09:57:43 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.01s
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-28 09:57:43 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.01762080192565918, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 2, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.004269599914550781, 'total_processing_time_seconds': 0.008539199829101562, 'avg_test_metric': 0.8}}}
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.02s
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-28 09:57:43 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:74 - Starting benchmark: Test Benchmark
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:98 - Benchmarking LLM: test_llm
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 1/2 for test_llm
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 1...
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:83 - Critique iteration 1/1
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:118 - Evaluating prompt 2/2 for test_llm
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt 2...
+2026-05-28 09:57:43 - core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - ERROR - benchmark_engine:204 - Error benchmarking test_llm on prompt 2: API Error
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:275 - Benchmark summary: {'benchmark_id': 'test_benchmark', 'benchmark_name': 'Test Benchmark', 'total_time_seconds': 0.023649215698242188, 'llms_tested': ['test_llm'], 'num_prompts': 2, 'llm_summaries': {'test_llm': {'num_prompts_evaluated': 1, 'avg_trust_score': 0.75, 'avg_processing_time_seconds': 0.00498509407043457, 'total_processing_time_seconds': 0.00498509407043457, 'avg_test_metric': 0.8}}}
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:224 - Benchmark completed in 0.02s
+2026-05-28 09:57:43 - benchmarking.benchmark_engine - INFO - benchmark_engine:64 - Initialized ComparativeBenchmarkEngine: Test Benchmark
+2026-05-28 09:57:47 - llm.base_adapter - INFO - base_adapter:28 - Initialized OpenAIAdapter for model: gpt-3.5-turbo
+2026-05-28 09:57:47 - llm.openai_adapter - INFO - openai_adapter:40 - Initialized OpenAI adapter for model: gpt-3.5-turbo
+2026-05-28 09:57:47 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:47 - llm.base_adapter - INFO - base_adapter:28 - Initialized OpenAIAdapter for model: gpt-3.5-turbo
+2026-05-28 09:57:47 - llm.openai_adapter - INFO - openai_adapter:40 - Initialized OpenAI adapter for model: gpt-3.5-turbo
+2026-05-28 09:57:47 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:47 - llm.openai_adapter - DEBUG - openai_adapter:75 - Generated response of length 13 from gpt-3.5-turbo
+2026-05-28 09:57:47 - llm.base_adapter - INFO - base_adapter:28 - Initialized OpenAIAdapter for model: gpt-3.5-turbo
+2026-05-28 09:57:47 - llm.openai_adapter - INFO - openai_adapter:40 - Initialized OpenAI adapter for model: gpt-3.5-turbo
+2026-05-28 09:57:47 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:108 - Created experiment: test_experiment (ID: 087fe6bb-632e-4a4a-9f06-29ed8d224b24)
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 37e0eb04-190c-49c3-b154-f11d42985d1f in experiment exp_123
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 763eb29d-01c4-444d-a593-1a337a871579 in experiment exp_123
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run 763eb29d-01c4-444d-a593-1a337a871579 with status: FINISHED
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run dc7ce670-5860-423e-a8ff-edb08821ca48 in experiment exp_123
+2026-05-28 09:57:47 - observation.experiment_tracking - DEBUG - experiment_tracking:212 - Logged 2 parameters to run dc7ce670-5860-423e-a8ff-edb08821ca48
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 5a41e6c5-a254-4a4e-96e9-53053ab66db8 in experiment exp_123
+2026-05-28 09:57:47 - observation.experiment_tracking - DEBUG - experiment_tracking:233 - Logged 2 metrics to run 5a41e6c5-a254-4a4e-96e9-53053ab66db8
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 18f044ef-a567-4a7c-a6f3-ea9ac5cffc42 in experiment exp_123
+2026-05-28 09:57:47 - observation.experiment_tracking - DEBUG - experiment_tracking:257 - Logged artifact /path/to/model.pkl to run 18f044ef-a567-4a7c-a6f3-ea9ac5cffc42
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run e0fc6c47-b696-4e84-92da-33fb321cf777 in experiment exp_123
+2026-05-28 09:57:47 - observation.experiment_tracking - DEBUG - experiment_tracking:278 - Set tag environment=production on run e0fc6c47-b696-4e84-92da-33fb321cf777
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run b0ee5281-1a90-47ab-88f1-2967d370688a in experiment exp_123
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run b78986e2-f2c7-4120-92c1-3d2026634e41 in experiment exp_123
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 639ae681-ccf8-43a5-85de-85b30458495c in experiment exp_123
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run b78986e2-f2c7-4120-92c1-3d2026634e41 with status: FINISHED
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:65 - ExperimentTracker initialized
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:167 - Started run 2df067b5-2822-418d-a611-e6e5ce0237d7 in experiment exp_123
+2026-05-28 09:57:47 - observation.experiment_tracking - INFO - experiment_tracking:192 - Ended run 2df067b5-2822-418d-a611-e6e5ce0237d7 with status: FINISHED
+2026-05-28 09:57:47 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-28 09:57:47 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-28 09:57:47 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-28 09:57:47 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-28 09:57:47 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-28 09:57:47 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-28 09:57:47 - observation.failure_tracker - INFO - failure_tracker:31 - FailureTracker initialized with alert threshold: 2
+2026-05-28 09:57:47 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-28 09:57:47 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-28 09:57:47 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-28 09:57:47 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-28 09:57:47 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-28 09:57:47 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-28 09:57:47 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.150s
+2026-05-28 09:57:47 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.150s (success=False)
+2026-05-28 09:57:47 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-28 09:57:47 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.021s
+2026-05-28 09:57:47 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.021s (success=True)
+2026-05-28 09:57:47 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.024s
+2026-05-28 09:57:48 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.024s (success=True)
+2026-05-28 09:57:48 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-28 09:57:48 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.007s
+2026-05-28 09:57:48 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.007s (success=False)
+2026-05-28 09:57:48 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-28 09:57:48 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-28 09:57:48 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-28 09:57:48 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-28 09:57:48 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-28 09:57:48 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.150s
+2026-05-28 09:57:48 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.150s (success=True)
+2026-05-28 09:57:48 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.300s
+2026-05-28 09:57:48 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.300s (success=True)
+2026-05-28 09:57:48 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.050s
+2026-05-28 09:57:48 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.050s (success=True)
+2026-05-28 09:57:48 - observation.latency_monitor - INFO - latency_monitor:30 - LatencyMonitor initialized for operation: test_operation
+2026-05-28 09:57:48 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.100s
+2026-05-28 09:57:48 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.100s (success=True)
+2026-05-28 09:57:48 - observation.metrics_logger - DEBUG - metrics_logger:137 - Logged test_operation latency: 0.200s
+2026-05-28 09:57:48 - observation.latency_monitor - DEBUG - latency_monitor:92 - Recorded latency for test_operation: 0.200s (success=True)
+2026-05-28 09:57:48 - observation.latency_monitor - INFO - latency_monitor:125 - Latency history reset for test_operation
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - urllib3.connectionpool - DEBUG - connectionpool:1062 - Starting new HTTPS connection (1): api.mlflow-telemetry.io:443
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.experiment_tracking - WARNING - experiment_tracking:224 - Attempted to log metrics to unknown run: test_run_123
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - observation.metrics_logger - INFO - metrics_logger:26 - MetricsLogger initialized
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:66 - Starting evaluation pipeline for prompt: Test prompt...
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:69 - Stage 1: Generation
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:74 - Stage 2: Evaluation
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:78 - Stage 3: Critique & Refinement
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 1/2
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:99 - Generating refined response based on critique
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:107 - Re-evaluating refined response
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:83 - Critique iteration 2/2
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:111 - Stage 4: Trust Scoring
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:149 - Evaluation pipeline completed in 0.00s
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - src.core.pipeline - INFO - pipeline:43 - EvaluationPipeline initialized with 1 evaluation services
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - src.evaluation.factual_correctness - ERROR - factual_correctness:91 - Error in factual correctness evaluation: Test error
+2026-05-28 09:57:48 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-28 09:57:48 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.5, 'hallucination_likelihood': 0.5}
+2026-05-28 09:57:48 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-28 09:57:48 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-28 09:57:48 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-28 09:57:48 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-28 09:57:48 - src.core.trust_scoring - INFO - trust_scoring:116 - AdaptiveTrustScoringService initialized with weights: {'factual_correctness': 0.2, 'hallucination_likelihood': 0.15, 'semantic_similarity': 0.15, 'context_relevance': 0.1, 'logical_consistency': 0.1, 'grammar_fluency': 0.1, 'toxicity_safety': 0.1, 'response_completeness': 0.1}
+2026-05-28 09:57:48 - asyncio - DEBUG - proactor_events:630 - Using proactor: IocpProactor
+2026-05-28 09:57:48 - src.core.trust_scoring - INFO - trust_scoring:34 - WeightedTrustScoringService initialized with weights: {'factual_correctness': 0.20000000000000004, 'hallucination_likelihood': 0.15000000000000002, 'semantic_similarity': 0.15000000000000002, 'context_relevance': 0.10000000000000002, 'logical_consistency': 0.10000000000000002, 'grammar_fluency': 0.10000000000000002, 'toxicity_safety': 0.10000000000000002, 'response_completeness': 0.10000000000000002}
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: hallucination_likelihood
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: semantic_similarity
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: context_relevance
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: logical_consistency
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: grammar_fluency
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: toxicity_safety
+2026-05-28 09:57:48 - src.core.trust_scoring - WARNING - trust_scoring:72 - Missing evaluation result for metric: response_completeness
+2026-05-28 09:57:50 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.mlflow-telemetry.io:443 "POST /log HTTP/1.1" 200 30

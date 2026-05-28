@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  enterprise-llm-trust-framework:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    ports:
+      - "8000:8000"  # API port
+      - "8501:8501"  # Streamlit dashboard port
+    volumes:
+      - ../.env:/app/.env:ro
+      - ../mlflow.db:/app/mlflow.db
+      - ../logs:/app/logs
+    environment:
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+
+  # Optional: MLflow server for experiment tracking
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../mlflow:/mlflow
+    environment:
+      - BACKEND_STORE_URI=sqlite:///mlflow.db
+      - DEFAULT_ARTIFACT_ROOT=/mlflow/artifacts
+    command: mlflow server --host 0.0.0.0 --port 5000
