@@ -1,4 +1,6 @@
-﻿import os
+﻿import asyncio
+import os
+import time
 from typing import Dict, Any, Optional, Tuple
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
@@ -7,6 +9,27 @@ from src.core.interfaces import EvaluationService, EvaluationResult, LLMAdapter
 from config.logging import get_logger
 
 logger = get_logger(__name__)
+
+
+async def _retry_llm_call(call_func, max_retries: int = 2, base_delay: float = 0.5):
+    """Retry an LLM API call with exponential backoff on failure."""
+    last_error = None
+    for attempt in range(max_retries + 1):
+        try:
+            return await call_func()
+        except Exception as exc:
+            last_error = exc
+            if attempt < max_retries:
+                delay = base_delay * (2 ** attempt)
+                logger.warning(
+                    f"NVIDIA NIM API error ({exc}). Retrying in {delay}s (attempt {attempt + 1}/{max_retries + 1})."
+                )
+                await asyncio.sleep(delay)
+            else:
+                logger.warning(
+                    f"NVIDIA NIM API error ({exc}). Falling back to simulated metric scores."
+                )
+    raise last_error
 
 
 class FactualCorrectnessEvaluator(EvaluationService):
@@ -61,12 +84,20 @@ REASONING: [brief explanation of your score]
                     response=response,
                     context=context_str
                 )
-                result_text = await self.llm_adapter.generate(formatted_prompt)
+                result_text = await _retry_llm_call(
+                    lambda: self.llm_adapter.generate(formatted_prompt),
+                    max_retries=2,
+                    base_delay=0.5,
+                )
             else:
-                result = await self.chain.ainvoke({
-                    "response": response,
-                    "context": context_str
-                })
+                result = await _retry_llm_call(
+                    lambda: self.chain.ainvoke({
+                        "response": response,
+                        "context": context_str
+                    }),
+                    max_retries=2,
+                    base_delay=0.5,
+                )
                 result_text = result.content if hasattr(result, 'content') else str(result)
 
             score, confidence, reasoning = self._parse_evaluation_result(result_text)

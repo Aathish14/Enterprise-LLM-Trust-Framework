@@ -4,6 +4,7 @@ Semantic similarity evaluation service.
 
 import asyncio
 import logging
+import time
 from typing import Dict, Any
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import Runnable
@@ -13,6 +14,27 @@ from src.core.interfaces import EvaluationService, EvaluationResult
 from config.logging import get_logger
 
 logger = get_logger(__name__)
+
+
+async def _retry_llm_call(call_func, max_retries: int = 2, base_delay: float = 0.5):
+    """Retry an LLM API call with exponential backoff on failure."""
+    last_error = None
+    for attempt in range(max_retries + 1):
+        try:
+            return await call_func()
+        except Exception as exc:
+            last_error = exc
+            if attempt < max_retries:
+                delay = base_delay * (2 ** attempt)
+                logger.warning(
+                    f"NVIDIA NIM API error ({exc}). Retrying in {delay}s (attempt {attempt + 1}/{max_retries + 1})."
+                )
+                await asyncio.sleep(delay)
+            else:
+                logger.warning(
+                    f"NVIDIA NIM API error ({exc}). Falling back to simulated metric scores."
+                )
+    raise last_error
 
 
 class SemanticSimilarityEvaluator(EvaluationService):
@@ -73,17 +95,21 @@ REASONING: [brief explanation of your score]
                     details={"error": "No expected answer provided"},
                     metric_name="semantic_similarity"
                 )
-            
+
             # Prepare context string (excluding expected_answer to avoid duplication)
             context_for_prompt = {k: v for k, v in context.items() if k != "expected_answer"}
             context_str = str(context_for_prompt)
-            
-            # Run evaluation
-            result = await self.chain.ainvoke({
-                "response": response,
-                "expected_answer": expected_answer,
-                "context": context_str
-            })
+
+            # Run evaluation with retry
+            result = await _retry_llm_call(
+                lambda: self.chain.ainvoke({
+                    "response": response,
+                    "expected_answer": expected_answer,
+                    "context": context_str
+                }),
+                max_retries=2,
+                base_delay=0.5,
+            )
             
             # Extract text content from result if it's an AIMessage
             if hasattr(result, 'content'):

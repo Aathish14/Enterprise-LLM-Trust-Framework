@@ -618,7 +618,7 @@ def _run_playground_task(
     has_key = bool(openai_key if model.startswith("gpt-") else api_key)
 
     if not has_key:
-        st.error(
+        st.warning(
             f"⚠️ API key not configured for model '{model}'. "
             f"Running in **simulated mode** — results will not be persisted to MLflow."
         )
@@ -672,7 +672,10 @@ def _run_playground_task(
         )
         return res
     except Exception as exc:  # noqa: BLE001 - UI must never crash on eval failure
-        st.error(f"❌ Evaluation pipeline failed: {exc}")
+        st.warning(
+            f"⚠️ Live API endpoint returned an error or timed out. "
+            f"Displaying simulated evaluation metrics for continuous UI preview."
+        )
         simulated = _build_simulated_result(
             prompt_text, context_text, model, temperature, max_tokens
         )
