@@ -491,7 +491,10 @@ def render_settings_page() -> None:
         st.selectbox(
             "Default Model",
             [
-                "nvidia/nemotron-3-ultra-550b-a55b",
+                "nvidia/nemotron-3.5-super-vl-120b-a12b",
+                "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+                "meta/llama-3.2-11b-vision-instruct",
+                "openai/gpt-oss-20b",
             ],
             index=0,
             help="Default model for evaluations",
@@ -592,7 +595,10 @@ def render_playground_page() -> None:
             model_choice = st.selectbox(
                 "Model",
                 [
-                    "nvidia/nemotron-3-ultra-550b-a55b",
+                    "nvidia/nemotron-3.5-super-vl-120b-a12b",
+                    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+                    "meta/llama-3.2-11b-vision-instruct",
+                    "openai/gpt-oss-20b",
                 ],
                 index=0,
                 help="Select the model to evaluate",
