@@ -40,3 +40,8 @@ Thumbs.db
 Docs/build/
 # Secrets config
 config/secrets.py
+*.pyo
+pre_cleanup_tree.txt
+*.egg-info/
+dist/
+build/
