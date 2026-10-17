@@ -526,6 +526,7 @@ def _build_simulated_result(
     model: str,
     temperature: float,
     max_tokens: int,
+    reason: str = "missing_or_invalid_api_key",
 ) -> Dict[str, Any]:
     """Build a realistic simulated evaluation result when API keys are unavailable."""
     import random
@@ -555,7 +556,7 @@ def _build_simulated_result(
     )
 
     return {
-        "run_id": str(uuid.uuid4()),
+        "run_id": "simulated-" + str(uuid.uuid4())[:8],
         "model": model,
         "prompt": prompt_text,
         "context": context_text,
@@ -566,7 +567,7 @@ def _build_simulated_result(
             "dimension_scores": dimension_scores,
             "details": {
                 "source": "simulated",
-                "reason": "missing_or_invalid_api_key",
+                "reason": reason,
             },
         },
         "metrics": {
@@ -583,6 +584,8 @@ def _build_simulated_result(
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "temperature": temperature,
             "max_tokens": max_tokens,
+            "is_simulated": True,
+            "source": "simulated",
         },
     }
 
@@ -673,15 +676,17 @@ def _run_playground_task(
         )
         return res
     except Exception as exc:  # noqa: BLE001 - UI must never crash on eval failure
+        diag = NvidiaNIMAdapter.sanitize_error(exc)
         st.warning(
             f"⚠️ Live API endpoint returned an error or timed out. "
             f"Displaying simulated evaluation metrics for continuous UI preview."
         )
         simulated = _build_simulated_result(
-            prompt_text, context_text, model, temperature, max_tokens
+            prompt_text, context_text, model, temperature, max_tokens,
+            reason="live_api_failure",
         )
-        simulated["run_id"] = "simulated-" + str(_uuid.uuid4())[:8]
-        simulated["metadata"]["error"] = str(exc)
+        simulated["metadata"]["error"] = str(exc)[:200]
+        simulated["metadata"]["error_diagnostics"] = diag
         return simulated
     finally:
         experiment_tracker.end_run(run_id)
@@ -743,16 +748,18 @@ def render_playground_page() -> None:
                     prompt_input, context_input, model_choice, temperature, max_tokens
                 )
             except Exception as eval_err:  # noqa: BLE001 - UI must never crash
+                diag = NvidiaNIMAdapter.sanitize_error(eval_err)
                 st.warning(
                     f"⚠️ Live API endpoint returned an error or timed out. "
                     f"Displaying simulated evaluation metrics for continuous UI preview."
                 )
                 from datetime import datetime as _dt, timezone as _tz
                 result = _build_simulated_result(
-                    prompt_input, context_input, model_choice, temperature, max_tokens
+                    prompt_input, context_input, model_choice, temperature, max_tokens,
+                    reason="live_api_failure",
                 )
-                result["run_id"] = "simulated-" + str(__import__("uuid").uuid4())[:8]
-                result["metadata"]["error"] = str(eval_err)
+                result["metadata"]["error"] = str(eval_err)[:200]
+                result["metadata"]["error_diagnostics"] = diag
             # Store in session state so results persist across reruns.
             st.session_state["playground_result"] = result
             _render_playground_result(result)
@@ -776,21 +783,37 @@ def _render_playground_result(result: Dict[str, Any]) -> None:
     st.subheader("📊 Evaluation Results")
 
     # --- Status badge ---
+    is_simulated = metadata.get("is_simulated", False)
     overall_pct = float(overall) * 100 if overall <= 1 else float(overall)
-    passed = overall_pct >= 70.0
-    badge_color = "#28a745" if passed else "#dc3545"
-    st.markdown(
-        f"""
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
-            <span style="display:inline-block;padding:4px 12px;border-radius:12px;
-                         background:{badge_color};color:white;font-weight:600;font-size:0.9rem;">
-                {'✅ PASSED' if passed else '❌ FAILED'}
-            </span>
-            <span style="font-size:0.85rem;color:#666;">Overall Trust Score: {overall_pct:.1f}%</span>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+
+    if is_simulated:
+        st.markdown(
+            """
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;
+                             background:#ffc107;color:#000;font-weight:600;font-size:0.9rem;">
+                    ⚠️ SIMULATED
+                </span>
+                <span style="font-size:0.85rem;color:#666;">Live API failure — synthetic preview only</span>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    else:
+        passed = overall_pct >= 70.0
+        badge_color = "#28a745" if passed else "#dc3545"
+        st.markdown(
+            f"""
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;
+                             background:{badge_color};color:white;font-weight:600;font-size:0.9rem;">
+                    {'✅ PASSED' if passed else '❌ FAILED'}
+                </span>
+                <span style="font-size:0.85rem;color:#666;">Overall Trust Score: {overall_pct:.1f}%</span>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
     # --- Key Metrics Grid ---
     m1, m2, m3, m4 = st.columns(4)
