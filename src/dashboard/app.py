@@ -492,11 +492,12 @@ def render_settings_page() -> None:
             "Default Model",
             [
                 "nvidia/nemotron-3-ultra-550b-a55b",
-                "nvidia/nemotron-3.5-lightning-30b-a3b",
                 "meta/llama-3.3-70b-instruct",
-                "meta/llama-3.1-8b-instruct",
+                "deepseek-ai/deepseek-r1",
+                "google/gemma-2-27b-it",
                 "gpt-4o",
             ],
+            index=0,
             help="Default model for evaluations",
         )
 
@@ -527,11 +528,22 @@ async def _run_playground_task(
     temperature: float,
     max_tokens: int,
 ) -> Dict[str, Any]:
+    # Adapter dispatch: gpt-* models use OpenAIAdapter; all others use NVIDIA NIM.
     if model.startswith("gpt-"):
+        if not os.getenv("OPENAI_API_KEY"):
+            raise ValueError(
+                "OpenAI API key is required for model 'gpt-4o'. "
+                "Set OPENAI_API_KEY in your environment or .env file."
+            )
         from src.llm.openai_adapter import OpenAIAdapter
 
         nim = OpenAIAdapter(model_name=model)
     else:
+        if not os.getenv("NVIDIA_API_KEY"):
+            raise ValueError(
+                f"NVIDIA API key is required for model '{model}'. "
+                "Set NVIDIA_API_KEY in your environment or .env file."
+            )
         nim = NvidiaNIMAdapter(model=model, temperature=temperature, max_tokens=max_tokens)
 
     evaluator = FactualCorrectnessEvaluator(llm_adapter=nim)
@@ -585,11 +597,12 @@ def render_playground_page() -> None:
                 "Model",
                 [
                     "nvidia/nemotron-3-ultra-550b-a55b",
-                    "nvidia/nemotron-3.5-lightning-30b-a3b",
                     "meta/llama-3.3-70b-instruct",
-                    "meta/llama-3.1-8b-instruct",
+                    "deepseek-ai/deepseek-r1",
+                    "google/gemma-2-27b-it",
                     "gpt-4o",
                 ],
+                index=0,
                 help="Select the model to evaluate",
             )
             temperature = st.slider("Temperature", 0.0, 1.0, 0.1, 0.1)
