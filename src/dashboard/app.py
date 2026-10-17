@@ -616,6 +616,7 @@ def _run_playground_task(
     api_key = os.getenv("NVIDIA_API_KEY")
     openai_key = os.getenv("OPENAI_API_KEY")
     has_key = bool(openai_key if model.startswith("gpt-") else api_key)
+    run_id = None
 
     if not has_key:
         st.warning(
@@ -643,11 +644,11 @@ def _run_playground_task(
     abs_uri = get_absolute_sqlite_uri()
     mlflow.set_tracking_uri(abs_uri)
 
-    exp_id = experiment_tracker.create_experiment("llm_trust_framework", "Production Benchmark")
-    run_id = experiment_tracker.start_run(exp_id, "ui_live_eval", {"model": model})
-
     try:
         import asyncio as _asyncio
+
+        exp_id = experiment_tracker.create_experiment("llm_trust_framework", "Production Benchmark")
+        run_id = experiment_tracker.start_run(exp_id, "ui_live_eval", {"model": model})
 
         res = _asyncio.run(
             pipeline.run_evaluation(prompt=prompt_text, context={"expected_facts": context_text})
@@ -737,9 +738,21 @@ def render_playground_page() -> None:
 
     if submit_btn:
         with st.spinner("🔄 Running evaluation pipeline..."):
-            result = _run_playground_task(
-                prompt_input, context_input, model_choice, temperature, max_tokens
-            )
+            try:
+                result = _run_playground_task(
+                    prompt_input, context_input, model_choice, temperature, max_tokens
+                )
+            except Exception as eval_err:  # noqa: BLE001 - UI must never crash
+                st.warning(
+                    f"⚠️ Live API endpoint returned an error or timed out. "
+                    f"Displaying simulated evaluation metrics for continuous UI preview."
+                )
+                from datetime import datetime as _dt, timezone as _tz
+                result = _build_simulated_result(
+                    prompt_input, context_input, model_choice, temperature, max_tokens
+                )
+                result["run_id"] = "simulated-" + str(__import__("uuid").uuid4())[:8]
+                result["metadata"]["error"] = str(eval_err)
             # Store in session state so results persist across reruns.
             st.session_state["playground_result"] = result
             _render_playground_result(result)
