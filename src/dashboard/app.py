@@ -842,7 +842,7 @@ def _render_playground_result(result: Dict[str, Any]) -> None:
         "Response",
         value=final_response,
         height=220,
-        key="playground_response_text",
+        key=f"playground_response_text_{run_id}",
         help="Copy the generated response below",
     )
     st.caption(
