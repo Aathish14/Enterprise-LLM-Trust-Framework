@@ -492,10 +492,6 @@ def render_settings_page() -> None:
             "Default Model",
             [
                 "nvidia/nemotron-3-ultra-550b-a55b",
-                "meta/llama-3.3-70b-instruct",
-                "deepseek-ai/deepseek-r1",
-                "google/gemma-2-27b-it",
-                "gpt-4o",
             ],
             index=0,
             help="Default model for evaluations",
@@ -597,10 +593,6 @@ def render_playground_page() -> None:
                 "Model",
                 [
                     "nvidia/nemotron-3-ultra-550b-a55b",
-                    "meta/llama-3.3-70b-instruct",
-                    "deepseek-ai/deepseek-r1",
-                    "google/gemma-2-27b-it",
-                    "gpt-4o",
                 ],
                 index=0,
                 help="Select the model to evaluate",
