@@ -8,7 +8,8 @@ from typing import Dict, Any, Optional, List
 from datetime import datetime
 from dataclasses import dataclass, asdict
 
-from .mlflow_integration import mlflow_tracker
+import mlflow
+from src.observation.mlflow_integration import mlflow_tracker
 from config.logging import get_logger
 
 logger = get_logger(__name__)
@@ -44,6 +45,7 @@ class ExperimentRun:
     start_time: datetime
     end_time: Optional[datetime] = None
     status: str = "RUNNING"
+    mlflow_run_context: Any = None  # Store MLflow run context manager
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for serialization."""
@@ -51,6 +53,9 @@ class ExperimentRun:
         data['start_time'] = self.start_time.isoformat()
         if self.end_time:
             data['end_time'] = self.end_time.isoformat()
+        # Don't serialize the context manager
+        if 'mlflow_run_context' in data:
+            del data['mlflow_run_context']
         return data
 
 
@@ -92,19 +97,15 @@ class ExperimentTracker:
             created_at=datetime.utcnow()
         )
         
-        # Log experiment creation as an MLflow tag/run
+        # Create or get MLflow experiment (no run needed for experiment creation)
         try:
-            # Start a run to log experiment metadata
-            with mlflow_tracker.start_run(run_name=f"experiment_creation_{name}", 
-                                        tags={"experiment_id": experiment_id, "type": "experiment_setup"}):
-                mlflow_tracker.log_params({
-                    "experiment_name": name,
-                    "experiment_description": description,
-                    **config.parameters
-                })
-                mlflow_tracker.log_tags(config.tags)
-                mlflow_tracker.log_dict(config.to_dict(), "experiment_config.json")
-                
+            try:
+                mlflow.create_experiment(name)
+                logger.info(f"Created MLflow experiment: {name}")
+            except mlflow.exceptions.MlflowException:
+                # Experiment already exists
+                logger.info(f"Using existing MLflow experiment: {name}")
+            
             logger.info(f"Created experiment: {name} (ID: {experiment_id})")
             return experiment_id
             
@@ -139,11 +140,13 @@ class ExperimentTracker:
         if tags:
             run_tags.update(tags)
         
-        # Start MLflow run
-        mlflow_run_id = mlflow_tracker.start_run(
+        # Start MLflow run (keep active until experiment_tracker.end_run is called)
+        mlflow_run_cm = mlflow_tracker.start_run(
             run_name=run_name or f"run_{run_id[:8]}",
             tags=run_tags
         )
+        # Enter the context manager to actually start the MLflow run
+        mlflow_run_cm.__enter__()
         
         # Create experiment run object
         run = ExperimentRun(
@@ -154,7 +157,8 @@ class ExperimentTracker:
             metrics={},
             artifacts=[],
             tags=run_tags,
-            start_time=datetime.utcnow()
+            start_time=datetime.utcnow(),
+            mlflow_run_context=mlflow_run_cm
         )
         
         # Store active run
@@ -183,8 +187,19 @@ class ExperimentTracker:
         run.end_time = datetime.utcnow()
         run.status = status
         
-        # End MLflow run
-        mlflow_tracker.end_run(status=status)
+        # End MLflow run via context manager exit
+        if run.mlflow_run_context:
+            try:
+                # Store status on context manager for __exit__ to use
+                run.mlflow_run_context._exit_status = status
+                run.mlflow_run_context.__exit__(None, None, None)
+            except Exception as e:
+                logger.warning(f"Error exiting MLflow run context: {e}")
+                # Fallback to direct end_run
+                mlflow_tracker.end_run(status=status)
+        else:
+            # Fallback if no context manager stored
+            mlflow_tracker.end_run(status=status)
         
         # Remove from active runs
         del self.active_runs[run_id]

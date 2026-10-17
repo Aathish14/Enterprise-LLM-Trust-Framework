@@ -9,7 +9,7 @@ from datetime import datetime
 from functools import wraps
 
 from config.logging import get_logger
-from core.interfaces import EvaluationResult, TrustScore
+from src.core.interfaces import EvaluationResult, TrustScore
 
 logger = get_logger(__name__)
 

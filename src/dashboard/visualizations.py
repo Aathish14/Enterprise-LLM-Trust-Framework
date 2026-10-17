@@ -99,7 +99,7 @@ def render_evaluation_heatmap(evaluation_data: pd.DataFrame, title: str = "Evalu
         evaluation_data: DataFrame with metrics as columns and runs/prompts as rows
         title: Title for the heatmap
     """
-    if evaluation_data.empty:
+    if ((evaluation_data.empty if hasattr(evaluation_data, "empty") else len(evaluation_data) == 0) if hasattr(evaluation_data, "empty") else len(evaluation_data) == 0):
         st.info("No data available for evaluation heatmap.")
         return
     
@@ -130,7 +130,7 @@ def render_comparison_bar_chart(comparison_data: pd.DataFrame,
         color_col: Optional column name for color grouping
         title: Title for the chart
     """
-    if comparison_data.empty:
+    if ((comparison_data.empty if hasattr(comparison_data, "empty") else len(comparison_data) == 0) if hasattr(comparison_data, "empty") else len(comparison_data) == 0):
         st.info("No data available for comparison chart.")
         return
     
@@ -168,7 +168,7 @@ def render_time_series_chart(time_series_data: pd.DataFrame,
         value_col: Column name for values to plot
         title: Title for the chart
     """
-    if time_series_data.empty:
+    if ((time_series_data.empty if hasattr(time_series_data, "empty") else len(time_series_data) == 0) if hasattr(time_series_data, "empty") else len(time_series_data) == 0):
         st.info("No data available for time series chart.")
         return
     
@@ -198,7 +198,7 @@ def render_metric_distribution(metric_data: pd.Series,
         metric_name: Name of the metric
         title: Title for the chart
     """
-    if metric_data.empty:
+    if ((metric_data.empty if hasattr(metric_data, "empty") else len(metric_data) == 0) if hasattr(metric_data, "empty") else len(metric_data) == 0):
         st.info(f"No data available for {metric_name} distribution.")
         return
     
@@ -233,7 +233,7 @@ def render_correlation_heatmap(correlation_matrix: pd.DataFrame,
         correlation_matrix: DataFrame containing correlation values
         title: Title for the heatmap
     """
-    if correlation_matrix.empty:
+    if ((correlation_matrix.empty if hasattr(correlation_matrix, "empty") else len(correlation_matrix) == 0) if hasattr(correlation_matrix, "empty") else len(correlation_matrix) == 0):
         st.info("No data available for correlation heatmap.")
         return
     
@@ -264,7 +264,7 @@ def render_pipeline_timeline(pipeline_steps: list, title: str = "Evaluation Pipe
     
     # Prepare data for timeline
     df = pd.DataFrame(pipeline_steps)
-    if df.empty:
+    if ((df.empty if hasattr(df, "empty") else len(df) == 0) if hasattr(df, "empty") else len(df) == 0):
         st.info("No pipeline steps available for timeline.")
         return
     

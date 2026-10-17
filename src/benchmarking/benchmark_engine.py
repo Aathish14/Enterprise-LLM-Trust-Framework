@@ -9,11 +9,11 @@ from typing import Dict, Any, List, Optional, Tuple
 from dataclasses import dataclass, asdict
 from datetime import datetime
 
-from core.interfaces import LLMAdapter, EvaluationResult, TrustScore
-from core.pipeline import EvaluationPipeline
-from observation.mlflow_integration import mlflow_tracker
-from observation.experiment_tracking import experiment_tracker
-from observation.metrics_logger import metrics_logger
+from src.core.interfaces import LLMAdapter, EvaluationResult, TrustScore
+from src.core.pipeline import EvaluationPipeline
+from src.observation.mlflow_integration import mlflow_tracker
+from src.observation.experiment_tracking import experiment_tracker
+from src.observation.metrics_logger import metrics_logger
 from config.logging import get_logger
 
 logger = get_logger(__name__)
@@ -74,14 +74,15 @@ class ComparativeBenchmarkEngine:
         logger.info(f"Starting benchmark: {self.config.name}")
         
         # Start MLflow run for the entire benchmark
-        with mlflow_tracker.start_run(
+        benchmark_run_id = mlflow_tracker.start_run(
             run_name=f"benchmark_{self.config.name}_{int(time.time())}",
             tags={
                 "benchmark_id": self.config.benchmark_id,
                 "benchmark_name": self.config.name,
                 ** (self.config.tags or {})
             }
-        ) as benchmark_run:
+        )
+        try:
             # Log benchmark configuration
             mlflow_tracker.log_params({
                 "benchmark_name": self.config.name,
@@ -222,6 +223,22 @@ class ComparativeBenchmarkEngine:
             })
             
             logger.info(f"Benchmark completed in {benchmark_total_time:.2f}s")
+            # End the benchmark MLflow run
+            mlflow_tracker.end_run()
+            return results
+        except Exception as e:
+            logger.error(f"Benchmark failed: {e}")
+            # End the benchmark MLflow run with failed status
+            try:
+                mlflow_tracker.end_run(status="FAILED")
+            except:
+                pass
+            return {}
+        else:
+            try:
+                mlflow_tracker.end_run()
+            except:
+                pass
             return results
     
     def _log_benchmark_summary(self, 

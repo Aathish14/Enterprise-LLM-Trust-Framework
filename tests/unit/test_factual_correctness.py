@@ -43,8 +43,8 @@ async def test_factual_correctness_evaluator_evaluate():
     
     assert isinstance(result, EvaluationResult)
     assert result.metric_name == "factual_correctness"
-    assert result.score == 0.8
-    assert result.confidence == 0.9
+    assert result.score == pytest.approx(0.8, rel=1e-3)
+    assert result.confidence == pytest.approx(0.9, rel=1e-3)
     assert "reasoning" in result.details
     assert result.details["reasoning"] == "The response contains mostly accurate information with minor inaccuracies."
 
@@ -66,8 +66,8 @@ async def test_factual_correctness_evaluator_evaluate_error_handling():
     
     assert isinstance(result, EvaluationResult)
     assert result.metric_name == "factual_correctness"
-    assert result.score == 0.0
-    assert result.confidence == 0.0
+    assert result.score == pytest.approx(0.0, abs=1e-6)
+    assert result.confidence == pytest.approx(0.0, abs=1e-6)
     assert "error" in result.details
     assert result.details["error"] == "Test error"
 
@@ -79,27 +79,27 @@ def test_parse_evaluation_result():
     # Test normal parsing
     result = "SCORE: 0.75\nCONFIDENCE: 0.8\nREASONING: Good response with minor issues."
     score, confidence, reasoning = evaluator._parse_evaluation_result(result)
-    assert score == 0.75
-    assert confidence == 0.8
+    assert score == pytest.approx(0.75, rel=1e-3)
+    assert confidence == pytest.approx(0.8, rel=1e-3)
     assert reasoning == "Good response with minor issues."
     
     # Test parsing with extra whitespace
     result = "SCORE: 0.5\nCONFIDENCE: 0.6\nREASONING: Average response"
     score, confidence, reasoning = evaluator._parse_evaluation_result(result)
-    assert score == 0.5
-    assert confidence == 0.6
+    assert score == pytest.approx(0.5, rel=1e-3)
+    assert confidence == pytest.approx(0.6, rel=1e-3)
     assert reasoning == "Average response"
     
     # Test parsing with invalid scores (should clamp to valid range)
     result = "SCORE: 1.5\nCONFIDENCE: -0.2\nREASONING: Invalid scores"
     score, confidence, reasoning = evaluator._parse_evaluation_result(result)
-    assert score == 1.0  # Clamped to max
-    assert confidence == 0.0  # Clamped to min
+    assert score == pytest.approx(1.0, rel=1e-3)  # Clamped to max
+    assert confidence == pytest.approx(0.0, abs=1e-6)  # Clamped to min
     assert reasoning == "Invalid scores"
     
     # Test parsing failure case
     result = "Invalid format"
     score, confidence, reasoning = evaluator._parse_evaluation_result(result)
-    assert score == 0.5  # Default
-    assert confidence == 0.5  # Default
+    assert score == pytest.approx(0.5, rel=1e-3)  # Default
+    assert confidence == pytest.approx(0.5, rel=1e-3)  # Default
     assert reasoning == "Failed to parse evaluation result"

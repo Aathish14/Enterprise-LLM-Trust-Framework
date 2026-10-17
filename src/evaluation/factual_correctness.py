@@ -1,15 +1,9 @@
-"""
-Factual correctness evaluation service.
-"""
-
-import asyncio
-import logging
-from typing import Dict, Any
+﻿import os
+from typing import Dict, Any, Optional, Tuple
 from langchain_core.prompts import PromptTemplate
-from langchain_core.runnables import Runnable
 from langchain_openai import ChatOpenAI
 
-from src.core.interfaces import EvaluationService, EvaluationResult
+from src.core.interfaces import EvaluationService, EvaluationResult, LLMAdapter
 from config.logging import get_logger
 
 logger = get_logger(__name__)
@@ -17,13 +11,16 @@ logger = get_logger(__name__)
 
 class FactualCorrectnessEvaluator(EvaluationService):
     """
-    Evaluates factual correctness of LLM responses.
-    
-    Uses LLM-as-a-judge approach to assess factual accuracy.
+    Evaluates factual correctness of LLM responses using LLM-as-a-judge.
+    Supports either a custom LLMAdapter (e.g., NvidiaNIMAdapter) or a LangChain ChatOpenAI model.
     """
-    
-    def __init__(self, llm_model: str = "gpt-3.5-turbo"):
-        self.llm = ChatOpenAI(model=llm_model, temperature=0)
+
+    def __init__(
+        self,
+        llm_model: str = "gpt-3.5-turbo",
+        llm_adapter: Optional[LLMAdapter] = None
+    ):
+        self.llm_adapter = llm_adapter
         self.prompt_template = PromptTemplate(
             input_variables=["response", "context"],
             template="""
@@ -46,38 +43,34 @@ CONFIDENCE: [confidence in your evaluation between 0.0 and 1.0]
 REASONING: [brief explanation of your score]
 """
         )
-        self.chain = self.prompt_template | self.llm
-    
+
+        if self.llm_adapter:
+            self.llm = None
+            self.chain = None
+        else:
+            self.llm = ChatOpenAI(model=llm_model, temperature=0)
+            self.chain = self.prompt_template | self.llm
+
     async def evaluate(self, response: str, context: Dict[str, Any]) -> EvaluationResult:
-        """
-        Evaluate factual correctness of a response.
-        
-        Args:
-            response: The LLM-generated response to evaluate
-            context: Additional context including prompt, expected answer, etc.
-            
-        Returns:
-            EvaluationResult containing the score and details
-        """
+        """Evaluate factual correctness of a response."""
         try:
-            # Prepare context string
             context_str = str(context)
-            
-            # Run evaluation
-            result = await self.chain.ainvoke({
-                "response": response,
-                "context": context_str
-            })
-            
-            # Extract text content from result if it's an AIMessage
-            if hasattr(result, 'content'):
-                result_text = result.content
+
+            if self.llm_adapter:
+                formatted_prompt = self.prompt_template.format(
+                    response=response,
+                    context=context_str
+                )
+                result_text = await self.llm_adapter.generate(formatted_prompt)
             else:
-                result_text = str(result)
-            
-            # Parse result
+                result = await self.chain.ainvoke({
+                    "response": response,
+                    "context": context_str
+                })
+                result_text = result.content if hasattr(result, 'content') else str(result)
+
             score, confidence, reasoning = self._parse_evaluation_result(result_text)
-            
+
             return EvaluationResult(
                 score=score,
                 confidence=confidence,
@@ -95,13 +88,13 @@ REASONING: [brief explanation of your score]
                 details={"error": str(e)},
                 metric_name="factual_correctness"
             )
-    
-    def _parse_evaluation_result(self, result: str) -> tuple[float, float, str]:
+
+    def _parse_evaluation_result(self, result: str) -> Tuple[float, float, str]:
         """Parse the LLM evaluation result."""
-        score = 0.5  # Default score
-        confidence = 0.5  # Default confidence
+        score = 0.5
+        confidence = 0.5
         reasoning = "Failed to parse evaluation result"
-        
+
         try:
             lines = result.strip().split('\n')
             for line in lines:
@@ -115,5 +108,5 @@ REASONING: [brief explanation of your score]
                     reasoning = line.split(':', 1)[1].strip()
         except Exception as e:
             logger.warning(f"Could not parse evaluation result: {e}")
-            
+
         return score, confidence, reasoning

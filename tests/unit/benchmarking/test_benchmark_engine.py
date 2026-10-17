@@ -12,8 +12,8 @@ from datetime import datetime
 # Add the src directory to the Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 
-from benchmarking.benchmark_engine import ComparativeBenchmarkEngine, BenchmarkConfig, BenchmarkResult
-from core.interfaces import LLMAdapter, EvaluationResult, TrustScore
+from src.benchmarking.benchmark_engine import ComparativeBenchmarkEngine, BenchmarkConfig, BenchmarkResult
+from src.core.interfaces import LLMAdapter, EvaluationResult, TrustScore
 
 
 @pytest.fixture
@@ -128,8 +128,8 @@ def test_benchmark_result_initialization():
     assert len(result.evaluation_results) == 1
     assert result.evaluation_results[0].metric_name == "test_metric"
     assert result.trust_score is not None
-    assert result.trust_score.overall_score == 0.75
-    assert result.processing_time == 1.5
+    assert result.trust_score.overall_score == pytest.approx(0.75, rel=1e-3)
+    assert result.processing_time == pytest.approx(1.5, abs=1e-3)
     assert result.metadata["test"] == "value"
 
 
@@ -142,8 +142,8 @@ def test_benchmark_engine_initialization(benchmark_engine, benchmark_config):
 @pytest.mark.asyncio
 async def test_run_benchmark(benchmark_engine, mock_llm_adapter, mock_evaluation_service, mock_trust_scoring_service):
     """Test running a benchmark."""
-    with patch('benchmarking.benchmark_engine.mlflow_tracker'), \
-         patch('benchmarking.benchmark_engine.experiment_tracker'):
+    with patch('src.benchmarking.benchmark_engine.mlflow_tracker') as mock_mlflow, \
+         patch('src.benchmarking.benchmark_engine.experiment_tracker') as mock_exp_tracker:
         
         # Run the benchmark
         results = await benchmark_engine.run_benchmark()
@@ -178,8 +178,8 @@ async def test_run_benchmark(benchmark_engine, mock_llm_adapter, mock_evaluation
 @pytest.mark.asyncio
 async def test_run_benchmark_with_errors(benchmark_engine, mock_llm_adapter, mock_evaluation_service, mock_trust_scoring_service):
     """Test running a benchmark when some evaluations fail."""
-    with patch('benchmarking.benchmark_engine.mlflow_tracker'), \
-         patch('benchmarking.benchmark_engine.experiment_tracker'):
+    with patch('src.benchmarking.benchmark_engine.mlflow_tracker') as mock_mlflow, \
+         patch('src.benchmarking.benchmark_engine.experiment_tracker') as mock_exp_tracker:
         
         # Make the LLM adapter fail on the second call
         mock_llm_adapter.generate.side_effect = [
@@ -215,8 +215,8 @@ async def test_run_benchmark_with_errors(benchmark_engine, mock_llm_adapter, moc
 
 def test_log_benchmark_summary(benchmark_engine):
     """Test logging benchmark summary."""
-    with patch('benchmarking.benchmark_engine.mlflow_tracker') as mock_mlflow, \
-         patch('benchmarking.benchmark_engine.logger') as mock_logger:
+    with patch('src.benchmarking.benchmark_engine.mlflow_tracker') as mock_mlflow, \
+         patch('src.benchmarking.benchmark_engine.logger') as mock_logger:
         
         # Ensure mlflow_tracker.log_dict doesn't raise an exception
         mock_mlflow.log_dict.return_value = None

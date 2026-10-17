@@ -1,3 +1,4 @@
+import os
 """
 Configuration settings for the Enterprise LLM Trust Framework.
 """
@@ -9,6 +10,12 @@ from pydantic import Field
 
 
 class Settings(BaseSettings):
+    debug: bool = False
+    app_name: str = "Enterprise LLM Trust Framework"
+    version: str = "0.1.0"
+    # NVIDIA NIM Configuration
+    nvidia_api_key: Optional[str] = None
+    nvidia_nim_base_url: str = "https://integrate.api.nvidia.com/v1"
     """Application settings."""
     
     # Application
@@ -36,6 +43,11 @@ class Settings(BaseSettings):
     
     # Observability
     MLFLOW_TRACKING_URI: str = "sqlite:///mlflow.db"
+    
+    @property
+    def mlflow_tracking_uri_absolute(self) -> str:
+        """Get absolute MLflow tracking URI for consistent database access."""
+        return "sqlite:///" + os.path.abspath("mlflow.db").replace("\\", "/")
     WANDB_PROJECT: str = "llm-trust-framework"
     WANDB_API_KEY: Optional[str] = None
     
@@ -57,6 +69,7 @@ class Settings(BaseSettings):
     }
     
     class Config:
+        extra = "ignore"
         env_file = ".env"
         case_sensitive = True
 

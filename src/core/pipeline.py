@@ -67,7 +67,8 @@ class EvaluationPipeline:
         
         # Stage 1: Generation
         logger.info("Stage 1: Generation")
-        response = await self.llm_adapter.generate(prompt, **context)
+        gen_kwargs = {k: v for k, v in context.items() if k != "prompt"}
+        response = await self.llm_adapter.generate(prompt, **gen_kwargs)
         context["initial_response"] = response
         
         # Stage 2: Evaluation

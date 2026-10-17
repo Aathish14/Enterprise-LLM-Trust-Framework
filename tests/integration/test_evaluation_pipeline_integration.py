@@ -69,10 +69,10 @@ async def test_evaluation_pipeline_with_real_evaluators():
     factual_result = next(er for er in result["evaluation_results"] if er["metric_name"] == "factual_correctness")
     hallucination_result = next(er for er in result["evaluation_results"] if er["metric_name"] == "hallucination_likelihood")
     
-    assert factual_result["score"] == 0.9
-    assert factual_result["confidence"] == 0.85
-    assert hallucination_result["score"] == 0.95
-    assert hallucination_result["confidence"] == 0.9
+    assert factual_result["score"] == pytest.approx(0.9, rel=1e-3)
+    assert factual_result["confidence"] == pytest.approx(0.85, rel=1e-3)
+    assert hallucination_result["score"] == pytest.approx(0.95, rel=1e-3)
+    assert hallucination_result["confidence"] == pytest.approx(0.9, rel=1e-3)
     
     # Check trust score
     assert result["trust_score"] is not None

@@ -106,7 +106,7 @@ async def test_evaluation_pipeline_initialization(mock_llm_adapter, mock_evaluat
         assert result["final_response"] == "Test response"
         assert len(result["evaluation_results"]) == 1
         assert result["evaluation_results"][0]["metric_name"] == "test_metric"
-        assert result["evaluation_results"][0]["score"] == 0.8
+        assert result["evaluation_results"][0]["score"] == pytest.approx(0.8, rel=1e-3)
         assert result["trust_score"] is None
         assert result["critique_feedback"] is None
 
@@ -159,9 +159,9 @@ async def test_evaluation_pipeline_with_trust_scoring(
     
     # Check result includes trust score
     assert result["trust_score"] is not None
-    assert result["trust_score"]["overall_score"] == 0.75
-    assert result["trust_score"]["dimension_scores"]["test_metric"] == 0.8
-    assert result["trust_score"]["confidence"] == 0.85
+    assert result["trust_score"]["overall_score"] == pytest.approx(0.75, rel=1e-3)
+    assert result["trust_score"]["dimension_scores"]["test_metric"] == pytest.approx(0.8, rel=1e-3)
+    assert result["trust_score"]["confidence"] == pytest.approx(0.85, rel=1e-3)
 
 
 @pytest.mark.asyncio

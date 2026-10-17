@@ -5,11 +5,13 @@ MLflow integration for experiment tracking in the Enterprise LLM Trust Framework
 import mlflow
 import mlflow.tracking
 from mlflow.tracking import MlflowClient
+from mlflow.entities import ViewType
 import logging
 from typing import Dict, Any, Optional, List
 from datetime import datetime
 import json
 import os
+import pandas as pd
 
 from config.logging import get_logger
 from config.settings import settings
@@ -31,13 +33,24 @@ class MLflowTracker:
         """
         self.experiment_name = experiment_name
         self.client = None
-        self._setup_mlflow()
+        self._initialized = False
         
+    def _ensure_setup(self):
+        """Lazily initialize MLflow tracking on first use."""
+        if getattr(self, '_initialized', False):
+            return
+        try:
+            self._setup_mlflow()
+            self._initialized = True
+        except Exception as e:
+            logger.warning(f"MLflow setup deferred: {e}. Running in degraded mode.")
+            self._initialized = True  # Prevent retry loops
+
     def _setup_mlflow(self):
         """Sets up MLflow tracking."""
         try:
-            # Set tracking URI from settings
-            mlflow.set_tracking_uri(settings.MLFLOW_TRACKING_URI)
+            # Set tracking URI from settings (use absolute path for consistency)
+            mlflow.set_tracking_uri(settings.mlflow_tracking_uri_absolute)
             
             # Create or get experiment
             try:
@@ -53,47 +66,83 @@ class MLflowTracker:
             mlflow.set_experiment(experiment_id)
             
             # Initialize client
-            self.client = MlflowClient(tracking_uri=settings.MLFLOW_TRACKING_URI)
+            self.client = MlflowClient(tracking_uri=settings.mlflow_tracking_uri_absolute)
             
-            logger.info(f"MLflow tracking initialized with URI: {settings.MLFLOW_TRACKING_URI}")
+            logger.info(f"MLflow tracking initialized with URI: {settings.mlflow_tracking_uri_absolute}")
             
         except Exception as e:
             logger.error(f"Failed to initialize MLflow tracking: {e}")
             raise
     
-    def start_run(self, run_name: Optional[str] = None, tags: Optional[Dict[str, str]] = None) -> str:
+    def start_run(self, run_name: Optional[str] = None, tags: Optional[Dict[str, str]] = None, nested: bool = False):
         """
         Start a new MLflow run.
         
         Args:
             run_name: Optional name for the run
             tags: Optional tags to apply to the run
+            nested: Whether to start a nested run
             
         Returns:
-            Run ID of the started run
+            Context manager for the MLflow run
         """
         try:
-            # Start MLflow run
-            run = mlflow.start_run(run_name=run_name, tags=tags)
-            run_id = run.info.run_id
+            self._ensure_setup()
             
-            logger.info(f"Started MLflow run: {run_id}")
-            return run_id
+            # Check for and close any orphaned active runs before starting a new one
+            # (unless nested=True, which allows nested runs within an active parent)
+            if not nested:
+                while mlflow.active_run():
+                    try:
+                        active = mlflow.active_run()
+                        logger.warning(f"Clearing active MLflow run {active.info.run_id} before starting new run")
+                        mlflow.end_run()
+                    except Exception:
+                        break
+            
+            # Start MLflow run
+            run = mlflow.start_run(run_name=run_name, tags=tags, nested=nested)
+            
+            logger.info(f"Started MLflow run: {run.info.run_id}")
+            # Return a context manager that provides access to self for logging
+            return self._MLflowRunContext(run, self)
             
         except Exception as e:
             logger.error(f"Failed to start MLflow run: {e}")
             raise
+
+    class _MLflowRunContext:
+        """Context manager for MLflow runs that provides access to the tracker for logging."""
+        def __init__(self, run, tracker):
+            self.run = run
+            self.tracker = tracker
+            
+        def __enter__(self):
+            return self.tracker
+            
+        def __exit__(self, exc_type, exc_val, exc_tb):
+            try:
+                # Import here to allow test patching of the tracker in experiment_tracking module
+                from src.observation.experiment_tracking import mlflow_tracker as exp_mlflow_tracker
+                status = getattr(self, '_exit_status', 'FINISHED')
+                exp_mlflow_tracker.end_run(status=status)
+            except Exception as e:
+                logger.error(f"Failed to end MLflow run: {e}")
     
     def end_run(self, status: str = "FINISHED"):
         """
-        End the current MLflow run.
+        End the current MLflow run (idempotent).
         
         Args:
             status: Status of the run (FINISHED, FAILED, KILLED)
         """
         try:
-            mlflow.end_run(status=status)
-            logger.info("Ended MLflow run")
+            active = mlflow.active_run()
+            if active:
+                mlflow.end_run(status=status)
+                logger.info(f"Ended MLflow run {active.info.run_id} with status {status}")
+            else:
+                logger.debug("No active MLflow run to end")
         except Exception as e:
             logger.error(f"Failed to end MLflow run: {e}")
     
@@ -104,6 +153,7 @@ class MLflowTracker:
         Args:
             params: Dictionary of parameters to log
         """
+        self._ensure_setup()
         try:
             # Convert all values to strings as MLflow requires string parameters
             string_params = {k: str(v) for k, v in params.items()}
@@ -112,6 +162,15 @@ class MLflowTracker:
         except Exception as e:
             logger.error(f"Failed to log parameters to MLflow: {e}")
     
+    def log_tags(self, tags: dict) -> None:
+        """Log multiple tags to the active MLflow run."""
+        self._ensure_setup()
+        try:
+            if tags:
+                mlflow.set_tags(tags)
+        except Exception as e:
+            logger.error(f"Failed to log tags: {str(e)}")
+
     def log_metrics(self, metrics: Dict[str, float], step: Optional[int] = None):
         """
         Log metrics to the current MLflow run.
@@ -120,6 +179,7 @@ class MLflowTracker:
             metrics: Dictionary of metric names and values
             step: Optional step number for time-series metrics
         """
+        self._ensure_setup()
         try:
             mlflow.log_metrics(metrics, step=step)
             logger.debug(f"Logged {len(metrics)} metrics to MLflow")
@@ -134,6 +194,7 @@ class MLflowTracker:
             local_path: Path to the local artifact
             artifact_path: Optional path within the run's artifact directory
         """
+        self._ensure_setup()
         try:
             mlflow.log_artifact(local_path, artifact_path)
             logger.debug(f"Logged artifact {local_path} to MLflow")
@@ -148,6 +209,7 @@ class MLflowTracker:
             dictionary: Dictionary to log
             artifact_file: Name of the artifact file
         """
+        self._ensure_setup()
         try:
             # Write dictionary to temporary JSON file
             import tempfile
@@ -173,6 +235,7 @@ class MLflowTracker:
             key: Tag key
             value: Tag value
         """
+        self._ensure_setup()
         try:
             mlflow.set_tag(key, value)
             logger.debug(f"Set MLflow tag: {key}={value}")
@@ -186,6 +249,7 @@ class MLflowTracker:
         Returns:
             Dictionary containing experiment information
         """
+        self._ensure_setup()
         try:
             experiment = mlflow.get_experiment_by_name(self.experiment_name)
             if experiment:
@@ -216,6 +280,7 @@ class MLflowTracker:
         Returns:
             List of run information dictionaries
         """
+        self._ensure_setup()
         try:
             runs = mlflow.search_runs(
                 experiment_names=[self.experiment_name],
@@ -233,6 +298,19 @@ class MLflowTracker:
             logger.error(f"Failed to search MLflow runs: {e}")
             return []
 
+    def get_runs(self, experiment_id: Optional[str] = None) -> pd.DataFrame:
+        """Get all runs across all experiments in the MLflow database."""
+        try:
+            self._ensure_setup()
+            all_exps = mlflow.search_experiments()
+            exp_ids = [e.experiment_id for e in all_exps] if all_exps else ["0", "1", "2"]
+            runs = mlflow.search_runs(experiment_ids=exp_ids)
+            if isinstance(runs, list):
+                return pd.DataFrame(runs) if len(runs) > 0 else pd.DataFrame()
+            return runs if isinstance(runs, pd.DataFrame) else pd.DataFrame()
+        except Exception as e:
+            logger.error(f"Failed to get MLflow runs: {e}")
+            return pd.DataFrame()
 
-# Global MLflow tracker instance
+# Global singleton instance
 mlflow_tracker = MLflowTracker()

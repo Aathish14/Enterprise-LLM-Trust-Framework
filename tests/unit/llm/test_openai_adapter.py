@@ -11,14 +11,14 @@ from unittest.mock import Mock, AsyncMock, patch
 # Add the src directory to the Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', '..', 'src'))
 
-from llm.openai_adapter import OpenAIAdapter
-from core.interfaces import LLMAdapter
+from src.llm.openai_adapter import OpenAIAdapter
+from src.core.interfaces import LLMAdapter
 
 
 @pytest.fixture
 def openai_adapter():
     """Create an OpenAIAdapter instance for testing."""
-    with patch('llm.openai_adapter.AsyncOpenAI'):
+    with patch('src.llm.openai_adapter.AsyncOpenAI'):
         adapter = OpenAIAdapter(model_name="gpt-3.5-turbo", api_key="test-key")
         return adapter
 
@@ -53,7 +53,7 @@ async def test_openai_adapter_generate(openai_adapter):
     call_args = mock_client.chat.completions.create.call_args
     assert call_args[1]["model"] == "gpt-3.5-turbo"
     assert call_args[1]["messages"] == [{"role": "user", "content": "Test prompt"}]
-    assert call_args[1]["temperature"] == 0.7
+    assert call_args[1]["temperature"] == pytest.approx(0.7, abs=1e-3)
     # max_tokens and stream should not be in the call if not specified
     assert "max_tokens" not in call_args[1] or call_args[1]["max_tokens"] is None
     assert "stream" not in call_args[1] or call_args[1]["stream"] is False

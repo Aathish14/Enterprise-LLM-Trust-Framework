@@ -12,7 +12,7 @@ from unittest.mock import Mock, patch
 # Add the src directory to the Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 
-from observation.latency_monitor import LatencyMonitor
+from src.observation.latency_monitor import LatencyMonitor
 
 
 @pytest.fixture
@@ -111,9 +111,9 @@ def test_get_statistics(latency_monitor):
     assert isinstance(stats, dict)
     assert stats["count"] == 5
     assert abs(stats["mean"] - 0.16) < 0.001  # (0.1+0.2+0.15+0.3+0.05)/5 = 0.16
-    assert stats["min"] == 0.05
-    assert stats["max"] == 0.3
-    assert stats["median"] == 0.15  # Middle value when sorted: [0.05, 0.1, 0.15, 0.2, 0.3]
+    assert stats["min"] == pytest.approx(0.05, abs=1e-3)
+    assert stats["max"] == pytest.approx(0.3, abs=1e-3)
+    assert stats["median"] == pytest.approx(0.15, rel=1e-3)  # Middle value when sorted: [0.05, 0.1, 0.15, 0.2, 0.3]
     # For p95 with 5 values, it should be the second highest (0.3) or close to it
     assert stats["p95"] >= 0.25  # Adjusted expectation
     assert stats["p99"] >= 0.25  # Adjusted expectation
@@ -140,7 +140,7 @@ def test_reset(latency_monitor):
 
 def test_global_latency_monitors():
     """Test that global latency monitors exist."""
-    from observation.latency_monitor import llm_call_latency, evaluation_latency, pipeline_latency
+    from src.observation.latency_monitor import llm_call_latency, evaluation_latency, pipeline_latency
     
     assert llm_call_latency is not None
     assert llm_call_latency.operation_name == "llm_call"

@@ -15,7 +15,7 @@ import os
 # Add src to path to import modules
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-from observation.mlflow_integration import mlflow_tracker
+from src.observation.mlflow_integration import mlflow_tracker
 from config.logging import get_logger
 
 logger = get_logger(__name__)
@@ -60,7 +60,7 @@ def render_evaluation_trends_report():
         # Get experiment data
         experiments = mlflow_tracker.search_runs(max_results=1000)
         
-        if experiments.empty:
+        if ((experiments.empty if hasattr(experiments, "empty") else len(experiments) == 0) if hasattr(experiments, "empty") else len(experiments) == 0):
             st.info("No data available for evaluation trends.")
             return
         
@@ -72,7 +72,7 @@ def render_evaluation_trends_report():
         # Filter finished experiments
         finished_experiments = experiments[experiments['status'] == 'FINISHED'].copy()
         
-        if finished_experiments.empty:
+        if ((finished_experiments.empty if hasattr(finished_experiments, "empty") else len(finished_experiments) == 0) if hasattr(finished_experiments, "empty") else len(finished_experiments) == 0):
             st.info("No finished experiments found.")
             return
         
@@ -134,7 +134,7 @@ def render_model_performance_report():
         # Get experiment data
         experiments = mlflow_tracker.search_runs(max_results=1000)
         
-        if experiments.empty:
+        if ((experiments.empty if hasattr(experiments, "empty") else len(experiments) == 0) if hasattr(experiments, "empty") else len(experiments) == 0):
             st.info("No data available for model performance comparison.")
             return
         
@@ -170,7 +170,7 @@ def render_trust_score_distribution_report():
         # Get experiment data with metrics
         experiments = mlflow_tracker.search_runs(max_results=1000)
         
-        if experiments.empty:
+        if ((experiments.empty if hasattr(experiments, "empty") else len(experiments) == 0) if hasattr(experiments, "empty") else len(experiments) == 0):
             st.info("No data available for trust score distribution.")
             return
         
@@ -189,7 +189,7 @@ def render_trust_score_distribution_report():
         scores_df = experiments[[trust_score_col]].dropna()
         scores_df = scores_df[(scores_df[trust_score_col] >= 0) & (scores_df[trust_score_col] <= 1)]
         
-        if scores_df.empty:
+        if ((scores_df.empty if hasattr(scores_df, "empty") else len(scores_df) == 0) if hasattr(scores_df, "empty") else len(scores_df) == 0):
             st.info("No valid trust score data found.")
             return
         
@@ -233,7 +233,7 @@ def render_latency_analysis_report():
         # Get experiment data
         experiments = mlflow_tracker.search_runs(max_results=1000)
         
-        if experiments.empty:
+        if ((experiments.empty if hasattr(experiments, "empty") else len(experiments) == 0) if hasattr(experiments, "empty") else len(experiments) == 0):
             st.info("No data available for latency analysis.")
             return
         
@@ -254,7 +254,7 @@ def render_latency_analysis_report():
         latency_df = experiments[[duration_col]].dropna()
         latency_df = latency_df[latency_df[duration_col] >= 0]
         
-        if latency_df.empty:
+        if ((latency_df.empty if hasattr(latency_df, "empty") else len(latency_df) == 0) if hasattr(latency_df, "empty") else len(latency_df) == 0):
             st.info("No valid latency data found.")
             return
         
@@ -303,7 +303,7 @@ def render_failure_analysis_report():
         # Get experiment data
         experiments = mlflow_tracker.search_runs(max_results=1000)
         
-        if experiments.empty:
+        if ((experiments.empty if hasattr(experiments, "empty") else len(experiments) == 0) if hasattr(experiments, "empty") else len(experiments) == 0):
             st.info("No data available for failure analysis.")
             return
         
@@ -321,7 +321,7 @@ def render_failure_analysis_report():
             
             # Show failure details if any
             failed_experiments = experiments[experiments['status'] != 'FINISHED']
-            if not failed_experiments.empty:
+            if (not (failed_experiments.empty if hasattr(failed_experiments, "empty") else len(failed_experiments) == 0) if hasattr(failed_experiments, "empty") else len(failed_experiments) > 0):
                 st.subheader("Failed Experiments")
                 st.dataframe(
                     failed_experiments[['run_id', 'status', 'start_time']].head(10),
@@ -345,7 +345,7 @@ def render_experiment_success_report():
         # Get experiment data
         experiments = mlflow_tracker.search_runs(max_results=1000)
         
-        if experiments.empty:
+        if ((experiments.empty if hasattr(experiments, "empty") else len(experiments) == 0) if hasattr(experiments, "empty") else len(experiments) == 0):
             st.info("No data available for experiment success rates.")
             return
         

@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 # Add the src directory to the Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 
-from observation.failure_tracker import FailureTracker
+from src.observation.failure_tracker import FailureTracker
 
 
 @pytest.fixture
@@ -33,7 +33,7 @@ def test_failure_tracker_initialization(failure_tracker):
 
 def test_record_failure(failure_tracker):
     """Test recording a failure."""
-    with patch('observation.failure_tracker.logger'):
+    with patch('src.observation.failure_tracker.logger'):
         try:
             raise ValueError("This is a test error")
         except ValueError as e:
@@ -57,7 +57,7 @@ def test_record_failure(failure_tracker):
 
 def test_record_failure_without_context(failure_tracker):
     """Test recording a failure without context."""
-    with patch('observation.failure_tracker.logger'):
+    with patch('src.observation.failure_tracker.logger'):
         try:
             raise RuntimeError("Another test error")
         except RuntimeError as e:
@@ -73,7 +73,7 @@ def test_record_failure_without_context(failure_tracker):
 
 def test_get_failure_history(failure_tracker):
     """Test getting failure history."""
-    with patch('observation.failure_tracker.logger'):
+    with patch('src.observation.failure_tracker.logger'):
         # Record a few failures
         try:
             raise ValueError("Error 1")
@@ -106,7 +106,7 @@ def test_get_failure_history(failure_tracker):
 
 def test_get_failure_counts(failure_tracker):
     """Test getting failure counts."""
-    with patch('observation.failure_tracker.logger'):
+    with patch('src.observation.failure_tracker.logger'):
         # Initially no failures
         counts = failure_tracker.get_failure_counts()
         assert counts == {}
@@ -135,7 +135,7 @@ def test_get_failure_counts(failure_tracker):
 
 def test_reset(failure_tracker):
     """Test resetting the failure tracker."""
-    with patch('observation.failure_tracker.logger'):
+    with patch('src.observation.failure_tracker.logger'):
         # Record a failure
         try:
             raise ValueError("Test error")
@@ -156,7 +156,7 @@ def test_reset(failure_tracker):
 
 def test_alert_triggering(failure_tracker):
     """Test that alerts are triggered when threshold is exceeded."""
-    with patch('observation.failure_tracker.logger') as mock_logger:
+    with patch('src.observation.failure_tracker.logger') as mock_logger:
         # Record failures up to the threshold
         for i in range(2):  # threshold is 2
             try:

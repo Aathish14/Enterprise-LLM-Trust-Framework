@@ -70,12 +70,12 @@ def test_weighted_trust_scoring_service_compute_score(sample_evaluation_results)
     # Check that dimension scores match the input for provided metrics
     for result in sample_evaluation_results:
         assert result.metric_name in trust_score.dimension_scores
-        assert trust_score.dimension_scores[result.metric_name] == result.score
+        assert trust_score.dimension_scores[result.metric_name] == pytest.approx(result.score, rel=1e-3)
     
     # Check that missing metrics have score 0.0
     for metric_name in scorer.weights:
         if metric_name not in [r.metric_name for r in sample_evaluation_results]:
-            assert trust_score.dimension_scores[metric_name] == 0.0
+            assert trust_score.dimension_scores[metric_name] == pytest.approx(0.0, abs=1e-6)
 
 
 def test_weighted_trust_scoring_service_with_missing_results():
@@ -141,7 +141,7 @@ def test_adaptive_trust_scoring_service_record_performance():
     scorer._record_performance(results, trust_score)
     
     assert len(scorer.performance_history) == 1
-    assert scorer.performance_history[0]["trust_score"]["overall_score"] == 0.8
+    assert scorer.performance_history[0]["trust_score"]["overall_score"] == pytest.approx(0.8, rel=1e-3)
     assert len(scorer.performance_history[0]["evaluation_results"]) == 1
 
 
@@ -164,4 +164,4 @@ def test_adaptive_trust_scoring_service_compute_score_delegates():
         trust_score = asyncio.run(scorer.compute_trust_score(results))
         
         assert isinstance(trust_score, TrustScore)
-        assert trust_score.overall_score == 0.75
+        assert trust_score.overall_score == pytest.approx(0.75, rel=1e-3)

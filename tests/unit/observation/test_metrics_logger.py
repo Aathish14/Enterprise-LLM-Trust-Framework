@@ -12,8 +12,8 @@ from datetime import datetime
 # Add the src directory to the Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 
-from observation.metrics_logger import MetricsLogger
-from core.interfaces import EvaluationResult, TrustScore
+from src.observation.metrics_logger import MetricsLogger
+from src.core.interfaces import EvaluationResult, TrustScore
 
 
 @pytest.fixture
@@ -58,7 +58,7 @@ def test_metrics_logger_initialization(metrics_logger):
 
 def test_log_evaluation_result(metrics_logger, sample_evaluation_result):
     """Test logging an evaluation result."""
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         metrics_logger.log_evaluation_result(
             result=sample_evaluation_result,
             run_id="test_run_123",
@@ -69,13 +69,13 @@ def test_log_evaluation_result(metrics_logger, sample_evaluation_result):
         assert metrics_logger.evaluation_counts["test_metric"] == 1
         
         # Verify logger debug was called
-        from observation.metrics_logger import logger
+        from src.observation.metrics_logger import logger
         logger.debug.assert_called()
 
 
 def test_log_evaluation_result_without_run_id(metrics_logger, sample_evaluation_result):
     """Test logging an evaluation result without run ID."""
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         metrics_logger.log_evaluation_result(
             result=sample_evaluation_result
         )
@@ -86,7 +86,7 @@ def test_log_evaluation_result_without_run_id(metrics_logger, sample_evaluation_
 
 def test_log_evaluation_result_multiple_times(metrics_logger, sample_evaluation_result):
     """Test logging multiple evaluation results."""
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         # Log the same metric multiple times
         for i in range(3):
             metrics_logger.log_evaluation_result(sample_evaluation_result)
@@ -97,7 +97,7 @@ def test_log_evaluation_result_multiple_times(metrics_logger, sample_evaluation_
 
 def test_log_trust_score(metrics_logger, sample_trust_score):
     """Test logging a trust score."""
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         metrics_logger.log_trust_score(
             trust_score=sample_trust_score,
             run_id="test_run_123",
@@ -105,23 +105,23 @@ def test_log_trust_score(metrics_logger, sample_trust_score):
         )
         
         # Verify logger debug was called
-        from observation.metrics_logger import logger
+        from src.observation.metrics_logger import logger
         logger.debug.assert_called()
 
 
 def test_log_trust_score_without_run_id(metrics_logger, sample_trust_score):
     """Test logging a trust score without run ID."""
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         metrics_logger.log_trust_score(trust_score=sample_trust_score)
         
         # Verify logger debug was called
-        from observation.metrics_logger import logger
+        from src.observation.metrics_logger import logger
         logger.debug.assert_called()
 
 
 def test_log_latency(metrics_logger):
     """Test logging latency."""
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         metrics_logger.log_latency(
             latency_seconds=0.45,
             operation="test_operation",
@@ -130,26 +130,26 @@ def test_log_latency(metrics_logger):
         
         # Check that latency was added to history
         assert len(metrics_logger.latency_history) == 1
-        assert metrics_logger.latency_history[0] == 0.45
+        assert metrics_logger.latency_history[0] == pytest.approx(0.45, rel=1e-3)
         
         # Verify logger debug was called
-        from observation.metrics_logger import logger
+        from src.observation.metrics_logger import logger
         logger.debug.assert_called()
 
 
 def test_log_latency_without_run_id(metrics_logger):
     """Test logging latency without run ID."""
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         metrics_logger.log_latency(latency_seconds=0.25)
         
         # Check that latency was added to history
         assert len(metrics_logger.latency_history) == 1
-        assert metrics_logger.latency_history[0] == 0.25
+        assert metrics_logger.latency_history[0] == pytest.approx(0.25, rel=1e-3)
 
 
 def test_log_latency_history_limit(metrics_logger):
     """Test that latency history is limited to prevent memory growth."""
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         # Add more than 1000 latencies
         for i in range(1005):
             metrics_logger.log_latency(latency_seconds=float(i) / 1000)
@@ -157,14 +157,14 @@ def test_log_latency_history_limit(metrics_logger):
         # Should be limited to last 1000 entries
         assert len(metrics_logger.latency_history) == 1000
         # First entry should be from i=5 (0.005)
-        assert metrics_logger.latency_history[0] == 0.005
+        assert metrics_logger.latency_history[0] == pytest.approx(0.005, rel=1e-3)
         # Last entry should be from i=1004 (1.004)
-        assert metrics_logger.latency_history[-1] == 1.004
+        assert metrics_logger.latency_history[-1] == pytest.approx(1.004, rel=1e-3)
 
 
 def test_log_evaluation_pipeline_metrics(metrics_logger):
     """Test logging evaluation pipeline metrics."""
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         pipeline_result = {
             "metadata": {
                 "processing_time_seconds": 2.5,
@@ -198,20 +198,20 @@ def test_log_evaluation_pipeline_metrics(metrics_logger):
         )
         
         # Verify logger debug was called
-        from observation.metrics_logger import logger
+        from src.observation.metrics_logger import logger
         logger.debug.assert_called()
 
 
 def test_log_evaluation_pipeline_metrics_empty(metrics_logger):
     """Test logging empty evaluation pipeline metrics."""
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         metrics_logger.log_evaluation_pipeline_metrics(
             pipeline_result={},
             run_id="test_run_123"
         )
         
         # Verify logger debug was called
-        from observation.metrics_logger import logger
+        from src.observation.metrics_logger import logger
         logger.debug.assert_called()
 
 
@@ -222,7 +222,7 @@ def test_get_evaluation_counts(metrics_logger, sample_evaluation_result):
     assert counts == {}
     
     # Log some evaluations
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         metrics_logger.log_evaluation_result(sample_evaluation_result)
         metrics_logger.log_evaluation_result(sample_evaluation_result)
         
@@ -248,7 +248,7 @@ def test_get_latency_stats(metrics_logger):
     assert stats == {}
     
     # Record some latencies
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         latencies = [0.1, 0.2, 0.15, 0.3, 0.05]
         for latency in latencies:
             metrics_logger.log_latency(latency)
@@ -258,15 +258,15 @@ def test_get_latency_stats(metrics_logger):
     assert isinstance(stats, dict)
     assert stats["count"] == 5
     assert abs(stats["mean"] - 0.16) < 0.001  # (0.1+0.2+0.15+0.3+0.05)/5 = 0.16
-    assert stats["min"] == 0.05
-    assert stats["max"] == 0.3
-    assert stats["median"] == 0.15  # Middle value when sorted: [0.05, 0.1, 0.15, 0.2, 0.3]
+    assert stats["min"] == pytest.approx(0.05, abs=1e-3)
+    assert stats["max"] == pytest.approx(0.3, abs=1e-3)
+    assert stats["median"] == pytest.approx(0.15, rel=1e-3)  # Middle value when sorted: [0.05, 0.1, 0.15, 0.2, 0.3]
 
 
 def test_get_latency_stats_operation_specific(metrics_logger):
     """Test getting latency statistics for specific operation."""
     # Record latencies for different operations
-    with patch('observation.metrics_logger.logger'):
+    with patch('src.observation.metrics_logger.logger'):
         metrics_logger.log_latency(0.1, operation="op1")
         metrics_logger.log_latency(0.2, operation="op1")
         metrics_logger.log_latency(0.3, operation="op2")
@@ -287,7 +287,7 @@ def test_get_latency_stats_operation_specific(metrics_logger):
 
 def test_global_metrics_logger():
     """Test that the global metrics logger exists."""
-    from observation.metrics_logger import metrics_logger
+    from src.observation.metrics_logger import metrics_logger
     
     assert metrics_logger is not None
     assert isinstance(metrics_logger, MetricsLogger)

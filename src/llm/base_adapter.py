@@ -5,7 +5,7 @@ Base LLM adapter for the Enterprise LLM Trust Framework.
 import abc
 import logging
 from typing import Dict, Any, Optional
-from core.interfaces import LLMAdapter
+from src.core.interfaces import LLMAdapter
 
 logger = logging.getLogger(__name__)
 

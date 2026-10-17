@@ -1,0 +1,42 @@
+﻿# Environment variables & secrets (NEVER COMMIT)
+.env
+.env.local
+*.env
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*.class
+*.so
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs, Databases, and Local Runtime State
+*.log
+logs/
+mlflow.db
+mlruns/
+.chroma/
+
+# IDE & OS Metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Runtime artifacts (auto-added)
+*.pyc
+
+# Architecture docs build output
+Docs/build/
+# Secrets config
+config/secrets.py
