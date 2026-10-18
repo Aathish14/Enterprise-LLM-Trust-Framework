@@ -60,7 +60,6 @@ class EvaluationPipeline:
         if context is None:
             context = {}
             
-        context["prompt"] = prompt
         start_time = datetime.utcnow()
         
         logger.info(f"Starting evaluation pipeline for prompt: {prompt[:100]}...")
@@ -69,7 +68,6 @@ class EvaluationPipeline:
         logger.info("Stage 1: Generation")
         gen_kwargs = {k: v for k, v in context.items() if k != "prompt"}
         response = await self.llm_adapter.generate(prompt, **gen_kwargs)
-        context["initial_response"] = response
         
         # Stage 2: Evaluation
         logger.info("Stage 2: Evaluation")
