@@ -46,24 +46,62 @@ class FactualCorrectnessEvaluator(EvaluationService):
         self.llm_adapter = llm_adapter
         self.prompt_template = PromptTemplate(
             input_variables=["response", "context"],
-            template="""
-You are an expert fact-checker. Evaluate the factual correctness of the following response.
+            template="""\
+You are a strict factual-correctness evaluator for enterprise AI governance content.
 
-Response to evaluate:
-{response}
+GROUND TRUTH CONCEPTS: {context}
+LLM RESPONSE TO EVALUATE: {response}
 
-Context (including expected facts or reference information):
-{context}
+INSTRUCTIONS:
+1. Identify each distinct concept in the ground truth.
+2. For each concept, classify the LLM response's coverage as:
+   - COVERED: The response explicitly addresses this concept with substantive detail.
+   - PARTIAL: The response touches on this concept but lacks depth, uses vague
+     language, or addresses only a sub-aspect.
+   - MISSING: The response does not substantively address this concept at all.
+   - CONTRADICTED: The response states something that conflicts with this concept.
 
-Please assess the factual correctness on a scale from 0.0 to 1.0, where:
-- 0.0 = Completely factually incorrect
-- 0.5 = Partially correct with some factual errors
-- 1.0 = Completely factually accurate
+3. Match by MEANING, not exact keywords. Examples of valid semantic matches:
+   - "bias mitigation" or "equitable outcomes" → covers "Fairness"
+   - "model documentation, interpretability techniques, SHAP, LIME" → covers "Explainability"
+   - "clear disclosures to stakeholders" → covers "Transparency"
+   - "designated ownership, governance council, escalation" → covers "Accountability"
+   - "incident response, resilience, graceful degradation" → partially covers "Robustness"
+   - "data protection, PII handling, consent" → covers "Privacy"
 
-Provide your evaluation in the following format:
-SCORE: [score between 0.0 and 1.0]
-CONFIDENCE: [confidence in your evaluation between 0.0 and 1.0]
-REASONING: [brief explanation of your score]
+4. Do NOT award credit for fluency, length, formatting, or general relevance alone.
+   A response that is well-written but omits key concepts must be scored accordingly.
+
+5. Additional valid details beyond the ground truth do NOT penalize the score.
+
+SCORING RUBRIC:
+  1.0  — All concepts COVERED
+  0.8  — All concepts COVERED or PARTIAL, none MISSING or CONTRADICTED
+  0.6  — Most concepts COVERED, 1–2 PARTIAL or MISSING
+  0.4  — Half or fewer concepts COVERED, several MISSING
+  0.2  — Few concepts COVERED, most MISSING or CONTRADICTED
+  0.0  — No concepts COVERED, or response is entirely unrelated
+
+Rules:
+- Match by MEANING, not exact keywords. "Bias mitigation" → covers "Fairness".
+  "Model documentation and interpretability techniques" → covers "Explainability".
+  "Clear disclosures to stakeholders" → covers "Transparency".
+  "Designated ownership, governance council, escalation" → covers "Accountability".
+  "Incident response, resilience, graceful degradation" → partially covers "Robustness".
+  "Data protection, PII handling, consent" → covers "Privacy".
+
+6. Do NOT award credit for fluency, length, formatting, or general relevance alone.
+   A response that is well-written but omits key concepts must be scored accordingly.
+
+7. Additional valid details beyond the ground truth do NOT penalize the score.
+
+8. If a concept like "Privacy" is not substantively addressed, mark it MISSING
+   even if the response is otherwise excellent.
+
+Reply in EXACTLY this format with no other text before or after:
+SCORE: <float between 0.0 and 1.0>
+CONFIDENCE: <float between 0.0 and 1.0>
+REASONING: <one sentence listing the number of COVERED, PARTIAL, MISSING, and CONTRADICTED concepts>
 """
         )
 
@@ -126,6 +164,8 @@ REASONING: [brief explanation of your score]
         Returns score=0.0 and confidence=0.0 when the LLM response cannot be
         parsed, so that a parse failure is not mistaken for a neutral 0.5 score.
         """
+        import math
+
         score = 0.0
         confidence = 0.0
         reasoning = "Failed to parse evaluation result"
@@ -143,5 +183,11 @@ REASONING: [brief explanation of your score]
                     reasoning = line.split(':', 1)[1].strip()
         except Exception as e:
             logger.warning(f"Could not parse evaluation result: {e}")
+
+        # Clamp non-finite values (NaN, Infinity) to safe defaults
+        if not math.isfinite(score):
+            score = 0.0
+        if not math.isfinite(confidence):
+            confidence = 0.0
 
         return score, confidence, reasoning

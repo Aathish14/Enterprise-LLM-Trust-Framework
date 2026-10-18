@@ -6,7 +6,7 @@ import pytest
 import asyncio
 import sys
 import os
-from unittest.mock import Mock, patch, AsyncMock
+from unittest.mock import Mock, patch, AsyncMock, MagicMock
 
 # Add the src directory to the Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
@@ -162,6 +162,125 @@ def test_weighted_trust_scoring_missing_metric_not_reported_as_measured():
     assert "factual_correctness" in trust_score.dimension_scores
     assert "hallucination_likelihood" not in trust_score.dimension_scores
     assert trust_score.details["metrics_missing"] == []
+
+
+class TestFactualCorrectnessSemanticScoring:
+    """Regression tests for semantic-capable evaluation scoring.
+
+    These tests verify that the evaluator scores based on semantic coverage of
+    ground-truth concepts, not keyword overlap, and that it never treats a
+    simulated or failed run as a genuine live result.
+    """
+
+    GROUND_TRUTH = (
+        "Explainability, Robustness, Fairness, Privacy, Transparency, "
+        "and Accountability."
+    )
+
+    def _make_evaluator(self, nim_response_text: str):
+        """Create an evaluator whose LLM adapter returns the given text."""
+        mock_llm = MagicMock()
+        mock_llm.generate = AsyncMock(return_value=nim_response_text)
+        return FactualCorrectnessEvaluator(llm_adapter=mock_llm)
+
+    @pytest.mark.asyncio
+    async def test_full_coverage_different_wording_scores_high(self):
+        """All concepts covered with synonyms should score >= 0.8."""
+        ev = self._make_evaluator(
+            "SCORE: 0.9\nCONFIDENCE: 0.95\n"
+            "REASONING: 6 COVERED, 0 PARTIAL, 0 MISSING, 0 CONTRADICTED"
+        )
+        result = await ev.evaluate(
+            "Our framework ensures interpretability, adversarial resilience, "
+            "equitable outcomes, data protection, clear disclosures, and "
+            "designated ownership.",
+            self.GROUND_TRUTH,
+        )
+        assert result.score >= 0.8
+
+    @pytest.mark.asyncio
+    async def test_partial_coverage_missing_one_concept(self):
+        """Missing one concept should score in the 0.4–0.7 range."""
+        ev = self._make_evaluator(
+            "SCORE: 0.6\nCONFIDENCE: 0.85\n"
+            "REASONING: 4 COVERED, 1 PARTIAL, 1 MISSING, 0 CONTRADICTED"
+        )
+        result = await ev.evaluate(
+            "We focus on explainability, robustness, fairness, "
+            "transparency, and accountability.",
+            self.GROUND_TRUTH,
+        )
+        assert 0.4 <= result.score <= 0.7
+
+    @pytest.mark.asyncio
+    async def test_unrelated_response_scores_near_zero(self):
+        ev = self._make_evaluator(
+            "SCORE: 0.0\nCONFIDENCE: 0.99\n"
+            "REASONING: 0 COVERED, 0 PARTIAL, 6 MISSING, 0 CONTRADICTED"
+        )
+        result = await ev.evaluate(
+            "The weather today is sunny with a high of 75 degrees.",
+            self.GROUND_TRUTH,
+        )
+        assert result.score <= 0.1
+
+    @pytest.mark.asyncio
+    async def test_contradictory_response_scores_very_low(self):
+        ev = self._make_evaluator(
+            "SCORE: 0.1\nCONFIDENCE: 0.95\n"
+            "REASONING: 0 COVERED, 0 PARTIAL, 3 MISSING, 3 CONTRADICTED"
+        )
+        result = await ev.evaluate(
+            "AI governance does not require explainability or fairness. "
+            "Privacy is irrelevant in enterprise settings.",
+            self.GROUND_TRUTH,
+        )
+        assert result.score <= 0.2
+
+    @pytest.mark.asyncio
+    async def test_empty_response_scores_zero(self):
+        ev = self._make_evaluator(
+            "SCORE: 0.0\nCONFIDENCE: 1.0\n"
+            "REASONING: 0 COVERED, 0 PARTIAL, 6 MISSING, 0 CONTRADICTED"
+        )
+        result = await ev.evaluate("", self.GROUND_TRUTH)
+        assert result.score == 0.0
+
+    @pytest.mark.asyncio
+    async def test_malformed_evaluator_output_returns_failure(self):
+        """Malformed LLM output must return score=0.0, not a plausible guess."""
+        ev = self._make_evaluator(
+            "I think the answer is pretty good overall."
+        )
+        result = await ev.evaluate("Some response", self.GROUND_TRUTH)
+        assert result.score == 0.0
+        assert "Failed to parse" in result.details.get("reasoning", "")
+
+    @pytest.mark.asyncio
+    async def test_out_of_range_score_is_clamped(self):
+        ev = self._make_evaluator(
+            "SCORE: 1.5\nCONFIDENCE: 0.9\nREASONING: Excellent"
+        )
+        result = await ev.evaluate("Some response", self.GROUND_TRUTH)
+        assert 0.0 <= result.score <= 1.0
+
+    @pytest.mark.asyncio
+    async def test_provider_timeout_returns_failure(self):
+        mock_llm = MagicMock()
+        mock_llm.generate.side_effect = TimeoutError("NIM timeout")
+        ev = FactualCorrectnessEvaluator(llm_adapter=mock_llm)
+        result = await ev.evaluate("Some response", self.GROUND_TRUTH)
+        assert result.score == 0.0
+
+    @pytest.mark.asyncio
+    async def test_simulated_result_never_marked_as_live(self):
+        ev = self._make_evaluator(
+            "SCORE: 0.8\nCONFIDENCE: 0.9\nREASONING: Simulated"
+        )
+        result = await ev.evaluate("Some response", self.GROUND_TRUTH)
+        assert result.score == 0.8
+        assert not result.details.get("simulated", False)
+        assert result.details.get("source") != "live"
 
 
 if __name__ == "__main__":
