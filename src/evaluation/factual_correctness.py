@@ -1,5 +1,6 @@
 ﻿import asyncio
 import os
+import re
 import time
 from typing import Dict, Any, Optional, Tuple
 from langchain_core.prompts import PromptTemplate
@@ -171,16 +172,20 @@ REASONING: <one sentence listing the number of COVERED, PARTIAL, MISSING, and CO
         reasoning = "Failed to parse evaluation result"
 
         try:
-            lines = result.strip().split('\n')
-            for line in lines:
-                if line.startswith('SCORE:'):
-                    score_str = line.split(':', 1)[1].strip()
-                    score = max(0.0, min(1.0, float(score_str)))
-                elif line.startswith('CONFIDENCE:'):
-                    confidence_str = line.split(':', 1)[1].strip()
-                    confidence = max(0.0, min(1.0, float(confidence_str)))
-                elif line.startswith('REASONING:'):
-                    reasoning = line.split(':', 1)[1].strip()
+            # Match SCORE: 0.8, **SCORE:** 0.8, - SCORE : 0.8, etc.
+            score_match = re.search(r'score\s*:\s*([0-9.]+)', result, re.IGNORECASE)
+            if score_match:
+                score = max(0.0, min(1.0, float(score_match.group(1))))
+
+            # Match CONFIDENCE: 0.9, **CONFIDENCE:** 0.9, etc.
+            conf_match = re.search(r'confidence\s*:\s*([0-9.]+)', result, re.IGNORECASE)
+            if conf_match:
+                confidence = max(0.0, min(1.0, float(conf_match.group(1))))
+
+            # Match REASONING: <text>, **REASONING:** <text>, etc.
+            reas_match = re.search(r'reasoning\s*:\s*(.*)', result, re.IGNORECASE)
+            if reas_match:
+                reasoning = reas_match.group(1).strip().strip('*"')
         except Exception as e:
             logger.warning(f"Could not parse evaluation result: {e}")
 
