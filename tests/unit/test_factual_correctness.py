@@ -13,6 +13,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 
 from src.evaluation.factual_correctness import FactualCorrectnessEvaluator
 from src.core.interfaces import EvaluationResult
+from src.core.trust_scoring import WeightedTrustScoringService
 from langchain_core.messages import AIMessage
 
 
@@ -97,9 +98,71 @@ def test_parse_evaluation_result():
     assert confidence == pytest.approx(0.0, abs=1e-6)  # Clamped to min
     assert reasoning == "Invalid scores"
     
-    # Test parsing failure case
+    # Test parsing failure case — parse failure returns 0.0/0.0, not neutral 0.5
     result = "Invalid format"
     score, confidence, reasoning = evaluator._parse_evaluation_result(result)
-    assert score == pytest.approx(0.5, rel=1e-3)  # Default
-    assert confidence == pytest.approx(0.5, rel=1e-3)  # Default
+    assert score == pytest.approx(0.0, abs=1e-6)
+    assert confidence == pytest.approx(0.0, abs=1e-6)
     assert reasoning == "Failed to parse evaluation result"
+
+
+@pytest.mark.asyncio
+async def test_evaluate_provider_failure_returns_zero_score():
+    """Provider failure must not result in a neutral 0.5 score.
+
+    When the LLM adapter raises an exception, evaluate() must return
+    score=0.0 and confidence=0.0 with an error detail, never a neutral
+    0.5 score that could be mistaken for a real measurement.
+    """
+    evaluator = FactualCorrectnessEvaluator()
+
+    mock_adapter = Mock()
+    mock_adapter.generate = AsyncMock(side_effect=Exception("API rate limit exceeded"))
+    evaluator.llm_adapter = mock_adapter
+    evaluator.llm = None
+    evaluator.chain = None
+
+    result = await evaluator.evaluate(
+        response="Some response text",
+        context={"expected_facts": "Some context"},
+    )
+
+    assert isinstance(result, EvaluationResult)
+    assert result.metric_name == "factual_correctness"
+    assert result.score == pytest.approx(0.0, abs=1e-6)
+    assert result.confidence == pytest.approx(0.0, abs=1e-6)
+    assert "error" in result.details
+
+
+def test_weighted_trust_scoring_missing_metric_not_reported_as_measured():
+    """A missing evaluation metric must not appear as a measured score.
+
+    When a metric has no weight (not in TRUST_SCORE_WEIGHTS), it must not
+    appear in dimension_scores at all — not even with score 0.0.
+    """
+    scorer = WeightedTrustScoringService()
+
+    results = [
+        EvaluationResult(
+            score=0.8,
+            confidence=0.9,
+            details={},
+            metric_name="factual_correctness",
+        ),
+        EvaluationResult(
+            score=0.6,
+            confidence=0.9,
+            details={},
+            metric_name="hallucination_likelihood",
+        ),
+    ]
+
+    trust_score = asyncio.run(scorer.compute_trust_score(results))
+
+    assert "factual_correctness" in trust_score.dimension_scores
+    assert "hallucination_likelihood" not in trust_score.dimension_scores
+    assert trust_score.details["metrics_missing"] == []
+
+
+if __name__ == "__main__":
+    pytest.main([__file__])

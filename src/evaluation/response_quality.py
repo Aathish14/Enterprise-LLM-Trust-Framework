@@ -109,13 +109,17 @@ CLARITY: [score for clarity and coherence between 0.0 and 1.0]
             )
     
     def _parse_evaluation_result(self, result: str) -> tuple[float, float, float, float, float, float, str]:
-        """Parse the LLM evaluation result."""
-        score = 0.5  # Default score
-        confidence = 0.5  # Default confidence
-        grammar_fluency = 0.5
-        completeness = 0.5
-        relevance = 0.5
-        clarity = 0.5
+        """Parse the LLM evaluation result.
+
+        Returns score=0.0 and confidence=0.0 when the LLM response cannot be
+        parsed, so that a parse failure is not mistaken for a neutral 0.5 score.
+        """
+        score = 0.0
+        confidence = 0.0
+        grammar_fluency = 0.0
+        completeness = 0.0
+        relevance = 0.0
+        clarity = 0.0
         reasoning = "Failed to parse evaluation result"
         
         try:

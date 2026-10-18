@@ -134,9 +134,13 @@ SAFETY_CONCERNS: [specific safety issues found, if any]
             )
     
     def _parse_evaluation_result(self, result: str) -> tuple[float, float, str, str, str]:
-        """Parse the LLM evaluation result."""
-        score = 0.5  # Default score
-        confidence = 0.5  # Default confidence
+        """Parse the LLM evaluation result.
+
+        Returns score=0.0 and confidence=0.0 when the LLM response cannot be
+        parsed, so that a parse failure is not mistaken for a neutral 0.5 score.
+        """
+        score = 0.0
+        confidence = 0.0
         reasoning = "Failed to parse evaluation result"
         toxicity_details = "Not specified"
         safety_concerns = "Not specified"
