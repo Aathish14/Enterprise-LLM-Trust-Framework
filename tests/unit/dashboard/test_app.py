@@ -5,7 +5,7 @@ Unit tests for the Streamlit dashboard app.
 import pytest
 import sys
 import os
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import AsyncMock, MagicMock, Mock, patch
 
 # Add the src directory to the Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
@@ -204,6 +204,166 @@ def test_playground_result_widget_keys_unique_per_result():
         f"Unexpected key: {text_area_keys[1]}"
     assert len(set(text_area_keys)) == len(text_area_keys), \
         f"Duplicate keys detected: {text_area_keys}"
+
+
+def test_timestamp_uses_valid_timezone_instance():
+    """Regression test: _run_playground_task must produce a valid timezone-aware
+    timestamp, not one built with the timezone class itself.
+
+    Previously `_dt.now(_tz)` passed the timezone *class* instead of an instance,
+    raising TypeError: tzinfo argument must be None or of a tzinfo subclass,
+    not type 'type'. This error was caught and replaced a successful pipeline
+    result with a simulated fallback, hiding the real NVIDIA response.
+    """
+    import sys
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "src"))
+
+    from datetime import datetime, timezone
+
+    from src.dashboard.app import _build_simulated_result
+
+    # _build_simulated_result uses datetime.now(timezone.utc) internally.
+    # This test guards against reintroducing the class-vs-instance bug.
+    result = _build_simulated_result(
+        "test prompt",
+        "test context",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        0.1,
+        1024,
+        reason="live_api_failure",
+    )
+
+    ts = result["metadata"]["timestamp"]
+    parsed = datetime.fromisoformat(ts)
+    assert parsed.tzinfo is not None, "timestamp must be timezone-aware"
+    assert parsed.tzinfo == timezone.utc, "timestamp must be UTC"
+
+
+def test_mlflow_failure_does_not_mask_pipeline_result():
+    """Regression test: MLflow setup failures must not replace a successful
+    pipeline result with a simulated fallback.
+
+    Previously _run_playground_task wrapped MLflow setup and pipeline execution
+    in a single try block, so an MLflow failure would replace a valid pipeline
+    result with a simulated fallback. MLflow setup is now non-fatal.
+    """
+    import sys
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "src"))
+
+    from src.dashboard.app import _run_playground_task
+    from src.llm.nvidia_nim_adapter import NvidiaNIMAdapter
+
+    os.environ["NVIDIA_API_KEY"] = "nvapi-test-key-123"
+
+    try:
+        with patch("src.dashboard.app.NvidiaNIMAdapter") as mock_adapter_class, \
+             patch("src.dashboard.app.experiment_tracker") as mock_tracker:
+
+            # Make MLflow setup fail
+            mock_tracker.create_experiment.side_effect = Exception("MLflow DB unavailable")
+
+            # Make the pipeline succeed
+            mock_adapter = Mock()
+            mock_adapter.generate = AsyncMock(return_value="Generated response text")
+            mock_adapter_class.return_value = mock_adapter
+
+            result = _run_playground_task(
+                "test prompt",
+                "test context",
+                "nvidia/nemotron-3.5-super-vl-120b-a12b",
+                0.1,
+                1024,
+            )
+
+            # Pipeline result must NOT be replaced by simulated fallback
+            assert result["model"] == "nvidia/nemotron-3.5-super-vl-120b-a12b"
+            assert result["final_response"] == "Generated response text"
+            assert result["metadata"].get("is_simulated") is not True, \
+                f"Live pipeline result must not be marked simulated: {result['metadata']}"
+            assert "error" not in result.get("metadata", {}), \
+                f"Live result must not contain error key: {result.get('metadata', {})}"
+    finally:
+        os.environ.pop("NVIDIA_API_KEY", None)
+
+
+def test_simulated_result_never_marked_as_live_success():
+    """Regression test: simulated results must never carry a live-success
+    badge or timestamp from a real pipeline run.
+
+    The status badge must say SIMULATED for simulated results, never PASSED/FAILED.
+    """
+    import sys
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "src"))
+
+    from src.dashboard.app import _render_playground_result
+
+    result = {
+        "run_id": "simulated-abc123",
+        "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "prompt": "test",
+        "context": "context",
+        "final_response": "Simulated response",
+        "trust_score": {
+            "overall_score": 0.85,
+            "confidence": 0.90,
+            "dimension_scores": {
+                "factual_correctness": 0.8,
+            },
+        },
+        "metadata": {
+            "is_simulated": True,
+            "source": "simulated",
+            "processing_time_seconds": 10.0,
+        },
+    }
+
+    registered_keys = []
+
+    def capture_text_area(*args, **kwargs):
+        return Mock()
+
+    mock_col = Mock()
+    mock_col.metric = Mock()
+
+    def mock_columns(n):
+        cols = []
+        for _ in range(n):
+            col = Mock()
+            col.metric = Mock()
+            col.__enter__ = Mock(return_value=col)
+            col.__exit__ = Mock(return_value=False)
+            cols.append(col)
+        return cols
+
+    with patch("streamlit.text_area", side_effect=capture_text_area), \
+         patch("streamlit.divider"), \
+         patch("streamlit.markdown"), \
+         patch("streamlit.columns", side_effect=mock_columns), \
+         patch("streamlit.caption"), \
+         patch("streamlit.code"), \
+         patch("streamlit.json"), \
+         patch("streamlit.button", return_value=False), \
+         patch("streamlit.write"), \
+         patch("streamlit.cache_data.clear"), \
+         patch("src.dashboard.app.render_trust_score_gauge"), \
+         patch("src.dashboard.app.render_evaluation_radar_chart"):
+
+        rendered_markdown = []
+        def capture_markdown(*args, **kwargs):
+            rendered_markdown.append(args[0] if args else "")
+            return Mock()
+
+        with patch("streamlit.markdown", side_effect=capture_markdown):
+            _render_playground_result(result)
+
+        # The SIMULATED badge must appear, not PASSED/FAILED
+        markdown_text = "\n".join(rendered_markdown)
+        assert "SIMULATED" in markdown_text, \
+            f"Expected SIMULATED badge, got: {markdown_text}"
+        assert "PASSED" not in markdown_text, \
+            f"Simulated result must not show PASSED badge: {markdown_text}"
+        assert "FAILED" not in markdown_text, \
+            f"Simulated result must not show FAILED badge: {markdown_text}"
 
 
 if __name__ == "__main__":

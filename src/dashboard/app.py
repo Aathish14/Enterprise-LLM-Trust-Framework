@@ -647,11 +647,22 @@ def _run_playground_task(
     abs_uri = get_absolute_sqlite_uri()
     mlflow.set_tracking_uri(abs_uri)
 
-    try:
-        import asyncio as _asyncio
+    exp_id = None
+    run_id = None
 
+    # MLflow setup is non-fatal: a tracking failure must not mask a live run result.
+    try:
         exp_id = experiment_tracker.create_experiment("llm_trust_framework", "Production Benchmark")
         run_id = experiment_tracker.start_run(exp_id, "ui_live_eval", {"model": model})
+    except Exception as mlflow_err:
+        diag = NvidiaNIMAdapter.sanitize_error(mlflow_err)
+        logger.warning(
+            "MLflow setup failed: %s; proceeding without MLflow persistence.",
+            mlflow_err,
+        )
+
+    try:
+        import asyncio as _asyncio
 
         res = _asyncio.run(
             pipeline.run_evaluation(prompt=prompt_text, context={"expected_facts": context_text})
@@ -671,7 +682,7 @@ def _run_playground_task(
                 "model": model,
                 "temperature": temperature,
                 "max_tokens": max_tokens,
-                "timestamp": _dt.now(_tz).isoformat(),
+                "timestamp": _dt.now(_tz.utc).isoformat(),
             }
         )
         return res
@@ -689,7 +700,8 @@ def _run_playground_task(
         simulated["metadata"]["error_diagnostics"] = diag
         return simulated
     finally:
-        experiment_tracker.end_run(run_id)
+        if run_id is not None:
+            experiment_tracker.end_run(run_id)
         try:
             if mlflow.active_run():
                 mlflow.end_run(status="FINISHED")
