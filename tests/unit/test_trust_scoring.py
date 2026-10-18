@@ -68,11 +68,13 @@ def test_weighted_trust_scoring_service_compute_score(sample_evaluation_results)
     assert len(trust_score.dimension_scores) == len(scorer.weights)
     
     # Check that dimension scores match the input for provided metrics
+    # Only factual_correctness has a weight; other metrics are not weighted
     for result in sample_evaluation_results:
-        assert result.metric_name in trust_score.dimension_scores
-        assert trust_score.dimension_scores[result.metric_name] == pytest.approx(result.score, rel=1e-3)
+        if result.metric_name in scorer.weights:
+            assert result.metric_name in trust_score.dimension_scores
+            assert trust_score.dimension_scores[result.metric_name] == pytest.approx(result.score, rel=1e-3)
     
-    # Check that missing metrics have score 0.0
+    # Check that weighted metrics missing from results have score 0.0
     for metric_name in scorer.weights:
         if metric_name not in [r.metric_name for r in sample_evaluation_results]:
             assert trust_score.dimension_scores[metric_name] == pytest.approx(0.0, abs=1e-6)

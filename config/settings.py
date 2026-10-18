@@ -57,15 +57,10 @@ class Settings(BaseSettings):
     TEMPERATURE: float = 0.1
     
     # Trust Scoring Weights
+    # Only factual_correctness has an evaluator wired to LLMAdapter (NVIDIA NIM compatible).
+    # The other evaluators use ChatOpenAI directly and cannot work with NVIDIA NIM.
     TRUST_SCORE_WEIGHTS: dict = {
-        "factual_correctness": 0.2,
-        "hallucination_likelihood": 0.15,
-        "semantic_similarity": 0.15,
-        "context_relevance": 0.1,
-        "logical_consistency": 0.1,
-        "grammar_fluency": 0.1,
-        "toxicity_safety": 0.1,
-        "response_completeness": 0.1
+        "factual_correctness": 1.0,
     }
     
     class Config:

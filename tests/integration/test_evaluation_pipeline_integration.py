@@ -78,7 +78,9 @@ async def test_evaluation_pipeline_with_real_evaluators():
     assert result["trust_score"] is not None
     assert result["trust_score"]["overall_score"] > 0.8  # Should be high given the scores
     assert "factual_correctness" in result["trust_score"]["dimension_scores"]
-    assert "hallucination_likelihood" in result["trust_score"]["dimension_scores"]
+    assert result["trust_score"]["dimension_scores"]["factual_correctness"] == pytest.approx(0.9, rel=1e-3)
+    # hallucination_likelihood is evaluated but not weighted, so it won't appear in dimension_scores
+    assert "hallucination_likelihood" not in result["trust_score"]["dimension_scores"]
     
     # Check metadata
     assert "processing_time_seconds" in result["metadata"]
