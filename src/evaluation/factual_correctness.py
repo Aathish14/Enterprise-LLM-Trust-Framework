@@ -116,7 +116,8 @@ REASONING: <one sentence listing the number of COVERED, PARTIAL, MISSING, and CO
     async def evaluate(self, response: str, context: Dict[str, Any]) -> EvaluationResult:
         """Evaluate factual correctness of a response."""
         try:
-            context_str = str(context)
+            # context may be a dict {"expected_facts": "..."} or a plain string
+            context_str = context.get("expected_facts", "") if isinstance(context, dict) else str(context)
 
             if self.llm_adapter:
                 formatted_prompt = self.prompt_template.format(
