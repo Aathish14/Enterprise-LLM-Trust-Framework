@@ -744,13 +744,8 @@ def render_playground_page() -> None:
 
         submit_btn = st.form_submit_button("🚀 Run Live Evaluation", type="primary", use_container_width=True)
 
-    # --- Render prior result from session state if present ---
-    prior = st.session_state.get("playground_result")
-    if prior:
-        _render_playground_result(prior)
-
     if submit_btn:
-        with st.spinner("🔄 Running evaluation pipeline..."):
+        with st.spinner("⚠️ Running evaluation pipeline..."):
             try:
                 result = _run_playground_task(
                     prompt_input, context_input, model_choice, temperature, max_tokens
@@ -763,15 +758,18 @@ def render_playground_page() -> None:
                 )
                 from datetime import datetime as _dt, timezone as _tz
                 result = _build_simulated_result(
-                    prompt_input, context_input, model_choice, temperature, max_tokens,
+                    prompt_input, context_text, model_choice, temperature, max_tokens,
                     reason="live_api_failure",
                 )
                 result["metadata"]["error"] = str(eval_err)[:200]
                 result["metadata"]["error_diagnostics"] = diag
             # Store in session state so results persist across reruns.
             st.session_state["playground_result"] = result
-            _render_playground_result(result)
 
+    # Render result once (either freshly computed or from session state)
+    result_to_render = st.session_state.get("playground_result")
+    if result_to_render:
+        _render_playground_result(result_to_render)
 
 def _render_playground_result(result: Dict[str, Any]) -> None:
     """Render a rich, interactive UI for a playground evaluation result."""
