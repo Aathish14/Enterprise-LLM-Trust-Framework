@@ -71,7 +71,8 @@ class EvaluationPipeline:
         
         # Stage 2: Evaluation
         logger.info("Stage 2: Evaluation")
-        evaluation_results = await self._run_evaluations(response, context)
+        eval_context = {"expected_facts": context.get("expected_facts", "")}
+        evaluation_results = await self._run_evaluations(response, eval_context)
         
         # Stage 3: Critique & Refinement Loop
         logger.info("Stage 3: Critique & Refinement")
