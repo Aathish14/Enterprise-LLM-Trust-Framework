@@ -62,6 +62,13 @@ class Settings(BaseSettings):
     TRUST_SCORE_WEIGHTS: dict = {
         "factual_correctness": 1.0,
     }
+
+    # Default model for Live Playground dropdown.
+    # nvidia/nemotron-3.5-super-vl-120b-a12b is slow (45-90s) and can timeout.
+    # nvidia/nemotron-3-nano-omni-30b-a3b-reasoning returns 503 Service Unavailable.
+    # openai/gpt-oss-20b times out (>90s).
+    # meta/llama-3.2-11b-vision-instruct runs end-to-end in ~10s with good scores.
+    DEFAULT_MODEL: str = "meta/llama-3.2-11b-vision-instruct"
     
     class Config:
         extra = "ignore"
